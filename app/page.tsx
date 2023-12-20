@@ -66,7 +66,7 @@ export default function Home() {
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            aqui informacion sobre mi
+          Full-Stack Developer Crafting Engaging Digital Experiences
           </p>
         </a>
 
@@ -83,7 +83,7 @@ export default function Home() {
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Aqui unas lineas sobre mis trabajos y experiencias con link a experiencias
+          Explore my work history to witness my evolution.
           </p>
         </a>
 
@@ -100,7 +100,7 @@ export default function Home() {
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            explicacion de top 5 de lenguajes y al dar click muestra mas detalles junto con proyectos
+          Bringing ideas to life with React, JavaScript, and TypeScript. 
           </p>
         </a>
 
@@ -117,7 +117,7 @@ export default function Home() {
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Redes sociales y plataformas de contacto con una forma
+          Ready to take the first step? Lets discuss your idea today.
           </p>
         </a>
       </div>
