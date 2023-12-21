@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import About from './about/page'
+
 
 const navigation = [
   { name: "About", href: "/about" },
