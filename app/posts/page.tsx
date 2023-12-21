@@ -1,109 +1,257 @@
+import Link from "next/link";
+import React from "react";
+// import { allProjects } from "contentlayer/generated";
+import { Navigation } from "../components/nav";
+import { Card } from "../components/card";
+// import { Article } from "./article";
+// import { Redis } from "@upstash/redis";
+import { Eye } from "lucide-react";
 import Image from 'next/image'
 
-export default function contruccionPortfolio() {
-    return <main className="flex min-h-screen flex-col items-center justify-between p-24">
-    <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-      <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-        Get started checking &nbsp;
-        <a href="/projects" target="_blank" className="dark:green">
-          <code className="font-mono font-bold">
-            My Projects
-          </code>
-        </a>
-      </p>
-      <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-        <a
-          className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-          href="https://github.com/jerangel1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Profile{' '}
-          <Image
-            src="/logoGithub3.svg"
-            alt="github Logo"
-            className="dark:invert"
-            width={44}
-            height={24}
-            priority
-          />
-        </a>
+export default function Post() {
+  return (
+    <div className="relative pb-16">
+      {<Navigation />}
+      <div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
+        <div className="max-w-2xl mx-auto lg:mx-0">
+          <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
+            My portfolio was built with <a href="https://nextjs.org">Next.js</a> and <a href="https://nextra.vercel.app">Nextra</a>
+          </h2>
+          <p className="mt-4 text-xl text-zinc-400">
+            a library that makes it easy to create a beautiful and functional portfolio with Markdown. I chose these technologies because they offer the following benefits:
+          </p>
+        </div>
+        <div className="w-full h-px bg-zinc-800 " />
+        <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">I also used the following technologies to build my portfolio</h2>
+        <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
+
+          {/* Tailwind Card */}
+          <Card>
+            <Link href='https://tailwindcss.com/'>
+              <article className="relative w-1xl h-full p-4 md:p-8">
+                <div className="flex items-center justify-between gap-2">
+                  <div className="text-m text-zinc-100">
+                    This utility-first CSS framework makes it easy to create responsive and custom layouts.
+                    {/* <span>SOON</span> */}
+                  </div>
+                  <span className="flex items-center gap-1 text-xs text-zinc-500">
+
+                  </span>
+                </div>
+
+                <h2
+                  id="featured-post"
+                  className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display"
+                >
+                  <Image
+                    className="dark:invert"
+                    src="/tailwindcssLogo.png"
+                    width={250}
+                    height={250}
+                    alt="Tailwind Logo"
+                  />
+                </h2>
+                <p className="mt-10 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                </p>
+                <div className="absolute bottom-4 md:bottom-8">
+                  <p className="hidden text-zinc-200 hover:text-zinc-50 lg:block">
+                    Read more <span aria-hidden="true">&rarr;</span>
+                  </p>
+                </div>
+              </article>
+            </Link>
+          </Card>
+          {/* uptash card */}
+          <Card>
+            <Link href='https://upstash.com/'>
+              <article className="relative w-1xl h-full p-4 md:p-8">
+                <div className="flex items-center justify-between gap-2">
+                  <div className="text-m text-zinc-100">
+                    This MongoDB database service provides a scalable and reliable way to store my portfolio data.
+                    {/* <span>SOON</span> */}
+                  </div>
+                  <span className="flex items-center gap-1 text-xs text-zinc-500">
+
+                  </span>
+                </div>
+
+                <h2
+                  id="featured-post"
+                  className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display"
+                >
+                  <Image
+                    className=""
+                    src="/uptashLogo.png"
+                    width={250}
+                    height={250}
+                    alt="Uptash Logo"
+                  />
+                </h2>
+                <p className="mt-10 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                </p>
+                <div className="absolute bottom-4 md:bottom-8">
+                  <p className="hidden text-zinc-200 hover:text-zinc-50 lg:block">
+                    Read more <span aria-hidden="true">&rarr;</span>
+                  </p>
+                </div>
+              </article>
+            </Link>
+          </Card>
+          {/* vercel card */}
+          <Card>
+            <Link href='http://vercel.com'>
+              <article className="relative w-1xl h-full p-4 md:p-8">
+                <div className="flex items-center justify-between gap-2">
+                  <div className="text-m text-zinc-100">
+                    This hosting platform provides lightning-fast deployment and global scalability
+                    {/* <span>SOON</span> */}
+                  </div>
+                  <span className="flex items-center gap-1 text-xs text-zinc-500">
+
+                  </span>
+                </div>
+
+                <h2
+                  id="featured-post"
+                  className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display"
+                >
+                  <Image
+                    className=""
+                    src="/vercelLogo.png"
+                    width={250}
+                    height={250}
+                    alt="Vercel Logo"
+                  />
+                </h2>
+                <p className="leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                </p>
+                <div className="absolute bottom-4 md:bottom-8">
+                  <p className="hidden text-zinc-200 hover:text-zinc-50 lg:block">
+                    Read more <span aria-hidden="true">&rarr;</span>
+                  </p>
+                </div>
+              </article>
+            </Link>
+          </Card>
+          {/* card contentlayer */}
+          <Card>
+            <Link href='https://contentlayer.dev'>
+              <article className="relative w-1xl h-full p-4 md:p-8">
+                <div className="flex items-center justify-between gap-2">
+                  <div className="text-m text-zinc-100">
+                    This content management platform makes it easy to create and organize content.
+                    {/* <span>SOON</span> */}
+                  </div>
+                  <span className="flex items-center gap-1 text-xs text-zinc-500">
+
+                  </span>
+                </div>
+
+                <h2
+                  id="featured-post"
+                  className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display"
+                >
+                  <Image
+                    className=""
+                    src="/ContentLayerLogo.png"
+                    width={150}
+                    height={150}
+                    alt="content layer Logo"
+                  />Contentlayer
+                </h2>
+                <p className="leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                </p>
+                <div className="absolute bottom-4 md:bottom-8">
+                  <p className="hidden text-zinc-200 hover:text-zinc-50 lg:block">
+                    Read more <span aria-hidden="true">&rarr;</span>
+                  </p>
+                </div>
+              </article>
+            </Link>
+          </Card>
+          {/* Card node.js */}
+          <Card>
+            <Link href='https://nodejs.org/en'>
+              <article className="relative w-1xl h-full p-4 md:p-8">
+                <div className="flex items-center justify-between gap-2">
+                  <div className="text-m text-zinc-100">
+                    Node.js and its ubiquitous package manager, npm, for dependency management and efficient installation of essential tools
+                    {/* <span>SOON</span> */}
+                  </div>
+                  <span className="flex items-center gap-1 text-xs text-zinc-500">
+
+                  </span>
+                </div>
+
+                <h2
+                  id="featured-post"
+                  className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display"
+                >
+                  <Image
+                    className=""
+                    src="/nodejsLogo.png"
+                    width={150}
+                    height={150}
+                    alt="content layer Logo"
+                  />
+                </h2>
+                <p className="mt-5 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                </p>
+                <div className="absolute bottom-4 md:bottom-8">
+                  <p className=" hidden text-zinc-200 hover:text-zinc-50 lg:block">
+                    Read more <span aria-hidden="true">&rarr;</span>
+                  </p>
+                </div>
+              </article>
+            </Link>
+          </Card>
+          <Card>
+            <Link href='https://www.typescriptlang.org/'>
+              <article className="relative w-1xl h-full p-4 md:p-8">
+                <div className="flex items-center justify-between gap-2">
+                  <div className="text-m text-zinc-100">
+                    Benefit from robust type safety and enhanced code structure, leading to fewer bugs, improved maintainability, and a developer-friendly experience
+                    {/* <span>SOON</span> */}
+                  </div>
+                  <span className="flex items-center gap-1 text-xs text-zinc-500">
+
+                  </span>
+                </div>
+
+                <h2
+                  id="featured-post"
+                  className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display"
+                >
+                  <Image
+                    className=""
+                    src="/typescriptLogo.png"
+                    width={150}
+                    height={150}
+                    alt="content layer Logo"
+                  />
+                </h2>
+                <p className="mt-5 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                </p>
+                <div className="absolute bottom-4 md:bottom-8">
+                  <p className=" hidden text-zinc-200 hover:text-zinc-50 lg:block">
+                    Read more <span aria-hidden="true">&rarr;</span>
+                  </p>
+                </div>
+              </article>
+            </Link>
+          </Card>
+        </div>
+        {/* Footer Card */}
+        <Card>
+          <div className="flex flex-col items-center justify-center  gap-8 mx-auto  text-center  hover:border-gray-300 hover:bg-gray-200 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
+            <p className="font-mono font-bold">Im always looking for new ways to improve my portfolio and this its my version 2.0, so Im excited to see what the future holds. Im always eager to explore new technologies and push my boundaries, so stay tuned for future enhancements and innovations!</p>
+
+            <p className="font-mono font-bold">Thanks for your Time. Happy browsing! <span className="inline-block transition-all group-hover:scale-110 group-hover:text-blue-500 motion-reduce:transform-none">💙</span></p>
+          </div>
+        </Card>
+
+
       </div>
     </div>
-
-    <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-    <h3 className='text-center mt-2 '>My portfolio is built with **[Next.js](https://nextjs.org)** and **[Nextra](https://nextra.vercel.app/)**, a library that makes it easy to create a beautiful and functional portfolio with Markdown. I chose these technologies because they offer the following benefits:</h3>
-    </div>
-
-    <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-      <a
-        href="/about"
-        className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <h2 className={`mb-3 text-2xl font-semibold`}>
-          About{' '}
-          <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-            -&gt;
-          </span>
-        </h2>
-        <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-        Full-Stack Developer Crafting Engaging Digital Experiences
-        </p>
-      </a>
-
-      <a
-        href="/work"
-        className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <h2 className={`mb-3 text-2xl font-semibold`}>
-          Work{' '}
-          <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-            -&gt;
-          </span>
-        </h2>
-        <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-        Explore my work history to witness my evolution.
-        </p>
-      </a>
-
-      <a
-        href="/skills"
-        className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <h2 className={`mb-3 text-2xl font-semibold`}>
-          Skills{' '}
-          <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-            -&gt;
-          </span>
-        </h2>
-        <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-        Bringing ideas to life with React, JavaScript, and TypeScript. 
-        </p>
-      </a>
-
-      <a
-        href="/contact"
-        className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <h2 className={`mb-3 text-2xl font-semibold`}>
-          Contact{' '}
-          <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-            -&gt;
-          </span>
-        </h2>
-        <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-        Ready to take the first step? Lets discuss your idea today.
-        </p>
-      </a>
-    </div>
-  </main>
-
+  );
 }

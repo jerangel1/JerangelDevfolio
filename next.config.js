@@ -11,20 +11,5 @@
 
 // next.config.js
 module.exports = {
-  webpack: (config, { isServer }) => {
-    config.module.rules.push({
-      test: /\.mdx?$/, // Corrección de la expresión regular
-      use: [
-        {
-          loader: '@mdx-js/loader',
-          options: {
-            remarkPlugins: [],
-            rehypePlugins: [],
-          },
-        },
-      ],
-    });
-
-    return config; // ¡Asegúrate de retornar el objeto config!
-  },
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
 };
