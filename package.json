@@ -14,6 +14,7 @@
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^14.0.4",
     "@types/mdx": "^2.0.10",
+    "class-variance-authority": "^0.7.0",
     "framer-motion": "^10.16.16",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.299.0",

@@ -1,14 +1,6 @@
 import Image from 'next/image'
 import Link from "next/link";
-
-
-const navigation = [
-  { name: "About", href: "/about" },
-  { name: "Work", href: "/work" },
-  { name: "Skills", href: "/skills" },
-  { name: "Contact", href: "/contact" },
-  { name: "Projects", href: "/projects" },
-];
+import Particles from './components/particles';
 
 export default function Home() {
   return (

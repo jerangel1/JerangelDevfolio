@@ -1,11 +1,7 @@
 import Link from "next/link";
 import React from "react";
-// import { allProjects } from "contentlayer/generated";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
-// import { Article } from "./article";
-// import { Redis } from "@upstash/redis";
-import { Eye } from "lucide-react";
 import Image from 'next/image'
 
 export default function Post() {
@@ -32,7 +28,6 @@ export default function Post() {
                 <div className="flex items-center justify-between gap-2">
                   <div className="text-m text-zinc-100">
                     This utility-first CSS framework makes it easy to create responsive and custom layouts.
-                    {/* <span>SOON</span> */}
                   </div>
                   <span className="flex items-center gap-1 text-xs text-zinc-500">
 
