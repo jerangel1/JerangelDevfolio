@@ -1,6 +1,4 @@
 import Image from 'next/image'
-import Link from "next/link";
-import Particles from './components/particles';
 
 export default function Home() {
   return (
