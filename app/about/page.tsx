@@ -52,7 +52,9 @@ export default function About() {
           <h2 className={`mb-3 text-1xl text-center`}>
             I am <b>full-stack developer</b> with 2 years of experience in web development. I love the process of creating beautiful and functional user experiences, and Im always looking for new ways to use technology to solve problems.
             <p className='mt-3'>
-            Im also a quick learner and Im always up for a challenge. Im excited to see what the future holds for me as a developer.</p>{' '}
+            Im also a quick learner and Im always up for a challenge.</p>
+            <p className="font-mono font-bold mt-10">Happy browsing! <span className="inline-block transition-all group-hover:scale-110 group-hover:text-blue-500 motion-reduce:transform-none">💙</span></p>
+            {' '}
           </h2>
         </div>
       </div>

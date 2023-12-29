@@ -6,6 +6,12 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --background: white;
+    --primary: #605DFF;
+    --primary-light: #E6E5FF;
+    --secondary: #DFE6EE;
+    --secondary-background: #F4F6F9;
+    --secondary-text: #2E5A8C;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +30,28 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+/* original background */
+
+.Timeline-Works ol {
+  list-style-type: none;
+  position: relative;
+}
+
+.Timeline-Works li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.Timeline-Works li::before {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  left: -0.25rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #4a5568; /* Puedes cambiar el color */
+  border-radius: 50%;
+  border: 2px solid #cbd5e0; /* Puedes cambiar el color */
 }
