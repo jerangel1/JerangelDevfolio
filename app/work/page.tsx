@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { Navigation } from "../components/nav";
 import { HeaderWork } from "../components/HeaderWork"
 import Particles from '../components/particles';

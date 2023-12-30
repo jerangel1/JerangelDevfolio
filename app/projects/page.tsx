@@ -1,9 +1,25 @@
+"use client";
 import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProjectItem from "../components/projectsComponents";
 import { Navigation } from "../components/nav";
 import { HeaderProjects } from "../components/HeaderProjects";
+
+interface Tech {
+  imgSrc: string;
+  altText: string;
+}
+
+interface Project {
+  id: number;
+  name: string;
+  imgSrc: string;
+  altText: string;
+  techStack: Tech[];
+  description: string;
+  previewLink: string;
+}
 
 const navigation = [
   { name: "Projects", href: "/projects" },
@@ -66,22 +82,24 @@ const projects = [
   
 ];
 
-// Función para determinar el tamaño de un proyecto (usando el número de tecnologías utilizadas)
-const getProjectSize = (project) => project.techStack.length;
+/// Función para determinar el tamaño de un proyecto (usando el número de tecnologías utilizadas)
+const getProjectSize = (project: Project) => project.techStack.length;
 
 // Ordenar los proyectos por tamaño
 const sortedProjects = projects.sort((a, b) => getProjectSize(a) - getProjectSize(b));
 
-export default function Projects() {
+const Projects: React.FC = () => {
   return (
     <div className="flex flex-col gap-8 mt-15">
       <Navigation />
       <HeaderProjects />
-      <div className="justify-center items-center">
+      <div className="justify-center items-center sm:w-full mt-5 mb-16 p-8">
         {sortedProjects.map((project) => (
           <ProjectItem key={project.id} project={project} />
         ))}
       </div>
     </div>
   );
-}
+};
+
+export default Projects;

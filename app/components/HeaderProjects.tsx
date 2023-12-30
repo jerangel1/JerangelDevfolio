@@ -1,3 +1,4 @@
+"use client";
 import Particles from '../components/particles';
 
 export const HeaderProjects = () => {
@@ -17,8 +18,8 @@ export const HeaderProjects = () => {
       src="https://lottie.host/embed/10666b38-985d-4e85-9f22-6beab01f7384/DuwmB5XfgG.json"
       className="mx-auto"
       title="Lottie Animation"
-      width="300"  // Set the width as per your requirements
-      height="300" // Set the height as per your requirements
+      width="300"  
+      height="300" 
     ></iframe>
   </div>
 </div>

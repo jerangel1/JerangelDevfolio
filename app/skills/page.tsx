@@ -1,6 +1,8 @@
+"use client";
 import Image from 'next/image'
 import { Rocket } from 'lucide-react';
 import { Navigation } from "../components/nav";
+
 
 
 const navigation = [
@@ -32,7 +34,7 @@ export default function Skills() {
       <div className="w-full h-px bg-zinc-800 mt-5" />
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-center">
         <a
-          href="/about"
+          href="https://www.freecodecamp.org/espanol/news/aprende-html-y-css-curso-desde-cero/"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -63,7 +65,7 @@ export default function Skills() {
         </a>
 
         <a
-          href="/work"
+          href="https://getbootstrap.com/"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -87,7 +89,7 @@ export default function Skills() {
         </a>
 
         <a
-          href="/skills"
+          href="https://developer.mozilla.org/es/docs/Web/JavaScript"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -111,7 +113,7 @@ export default function Skills() {
         </a>
 
         <a
-          href="/contact"
+          href="https://tailwindcss.com/"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -138,7 +140,7 @@ export default function Skills() {
       <div className="w-full h-px bg-zinc-800 mt-5" />
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-center">
         <a
-          href="/about"
+          href="https://nodejs.org/en"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -162,7 +164,7 @@ export default function Skills() {
         </a>
 
         <a
-          href="/work"
+          href="https://www.python.org/"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -185,7 +187,7 @@ export default function Skills() {
         </a>
 
         <a
-          href="/skills"
+          href="https://www.mongodb.com/es"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -209,7 +211,7 @@ export default function Skills() {
         </a>
 
         <a
-          href="/contact"
+          href="https://www.php.net/manual/es/intro-whatis.php"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -236,7 +238,7 @@ export default function Skills() {
       <div className="w-full h-px bg-zinc-800 mt-5" />
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-center">
         <a
-          href="/about"
+          href="https://es.react.dev/"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -260,7 +262,7 @@ export default function Skills() {
         </a>
 
         <a
-          href="/work"
+          href="https://nextjs.org/"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -284,7 +286,7 @@ export default function Skills() {
         </a>
 
         <a
-          href="/skills"
+          href="https://firebase.google.com/?gad_source=1&gclid=CjwKCAiA-bmsBhAGEiwAoaQNmijCWnoQJza7N8q3a44cDHoIBF1D4u1cgI_Lgd9ctVE5-P7UJUsW9hoCcukQAvD_BwE&gclsrc=aw.ds&hl=es-419"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -308,7 +310,7 @@ export default function Skills() {
         </a>
 
         <a
-          href="/contact"
+          href="https://vercel.com"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
