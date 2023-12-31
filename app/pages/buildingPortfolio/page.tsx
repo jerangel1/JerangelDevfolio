@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { Navigation } from "../components/nav";
-import { Card } from "../components/card";
+import { Navigation } from "../../components/nav";
+import { Card } from "../../components/card";
 import Image from 'next/image'
 
-export default function Post() {
+export default function howBuild() {
   return (
     <div className="relative pb-16">
       {<Navigation />}

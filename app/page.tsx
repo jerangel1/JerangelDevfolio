@@ -1,5 +1,6 @@
 "use client";
 import Image from 'next/image'
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Get started checking &nbsp;
-          <a href="/projects" target="_blank" className="dark:green">
+          <a href="/pages/portfolio" target="_blank" className="dark:green">
             <code className="font-mono font-bold">
               My Projects
             </code>
@@ -16,7 +17,7 @@ export default function Home() {
         
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
     
-          <a
+          <Link
             className="flex place-items-center gap-2 p-8 group-hover:scale-110 group-hover:text-blue-500 motion-reduce:transform-none"
             href="https://github.com/jerangel1"
             target="_blank"
@@ -31,7 +32,7 @@ export default function Home() {
               height={24}
               priority
             />
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -47,8 +48,8 @@ export default function Home() {
       </div>
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="/about"
+        <Link
+          href="/pages/about"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -62,10 +63,10 @@ export default function Home() {
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
           Full-Stack Developer Crafting Engaging Digital Experiences
           </p>
-        </a>
+        </Link>
 
-        <a
-          href="/work"
+        <Link
+          href="/pages/work"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -79,10 +80,10 @@ export default function Home() {
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
           Explore my work history to witness my evolution.
           </p>
-        </a>
+        </Link>
 
-        <a
-          href="/skills"
+        <Link
+          href="/pages/skills"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -96,10 +97,10 @@ export default function Home() {
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
           Bringing ideas to life with React, JavaScript, and TypeScript. 
           </p>
-        </a>
+        </Link>
 
-        <a
-          href="/contact"
+        <Link
+          href="/pages/contact"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -113,7 +114,7 @@ export default function Home() {
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
           Ready to take the first step? Lets discuss your idea today.
           </p>
-        </a>
+        </Link>
       </div>
     </main>
   )

@@ -1,16 +1,14 @@
 "use client";
 import Image from 'next/image'
 import { Rocket } from 'lucide-react';
-import { Navigation } from "../components/nav";
-
-
+import { Navigation } from "../../components/nav";
 
 const navigation = [
-  { name: "About", href: "/about" },
-  { name: "Work", href: "/work" },
-  { name: "Skills", href: "/skills" },
-  { name: "Contact", href: "/contact" },
-  { name: "Projects", href: "/projects" },
+  { name: "About", href: "/pages/about" },
+  { name: "Work", href: "/pages/work" },
+  { name: "Skills", href: "/pages/skills" },
+  { name: "Contact", href: "/pages/contact" },
+  { name: "Projects", href: "/pages/projects" },
 ];
 
 export default function Skills() {

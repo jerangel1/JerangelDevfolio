@@ -2,8 +2,8 @@
 import {Mail, Linkedin } from "lucide-react";
 import { BsTwitterX } from "react-icons/bs";
 import Link from "next/link";
-import { Navigation } from "../components/nav";
-import { Card } from "../components/card";
+import { Navigation } from "../../components/nav";
+import { Card } from "../../components/card";
 
 const socials = [
 	{
@@ -26,7 +26,7 @@ const socials = [
 	},
 ];
 
-export default function Example() {
+export default function contact() {
 	return (
 		<div className=" bg-gradient-to-tl from-zinc-400/0 via-zinc-1500 to-zinc-1100/0">
 			<Navigation />

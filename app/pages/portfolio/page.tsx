@@ -2,9 +2,9 @@
 import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ProjectItem from "../components/projectsComponents";
-import { Navigation } from "../components/nav";
-import { HeaderProjects } from "../components/HeaderProjects";
+import ProjectItem from "../../components/projectsComponents";
+import { Navigation } from "../../components/nav";
+import { HeaderProjects } from "../../components/HeaderProjects";
 
 interface Tech {
   imgSrc: string;
@@ -22,8 +22,11 @@ interface Project {
 }
 
 const navigation = [
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
+  { name: "About", href: "/pages/about" },
+  { name: "Work", href: "/pages/work" },
+  { name: "Skills", href: "/pages/skills" },
+  { name: "Contact", href: "/pages/contact" },
+  { name: "Projects", href: "/pages/projects" },
 ];
 
 const projects = [

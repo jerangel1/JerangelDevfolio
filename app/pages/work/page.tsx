@@ -1,9 +1,9 @@
 "use client";
-import { Navigation } from "../components/nav";
-import { HeaderWork } from "../components/HeaderWork"
-import Particles from '../components/particles';
+import { Navigation } from "../../components/nav";
+import { HeaderWork } from "../../components/HeaderWork"
+import Particles from '../../components/particles';
 import React from 'react';
-import ExperienceItem from '../components/experienceItem';
+import ExperienceItem from '../../components/experienceItem';
 
 const experiences = [
   {
@@ -49,7 +49,7 @@ const experiences = [
   }
 ];
 
-export default function Works() {
+export default function works() {
   return (
     <div className="flex flex-col gap-8 mt-15">
       <Particles
