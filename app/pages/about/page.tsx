@@ -46,7 +46,7 @@ export default function About() {
           >
             {<span className="transform transition-transform group-hover:translate-x-3 motion-reduce:transform-none">-&gt;</span>}How I Built My Portfolio?{' '}
             <Image
-              src="/.firebase/icons8-build-64.png"
+              src="/icons8-build-64.png"
               alt="build Logo"
               className=""
               width={64}
