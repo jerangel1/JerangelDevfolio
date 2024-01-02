@@ -62,7 +62,6 @@ const projects = [
     altText: 'Juego Mokepon',
     techStack: [
       { imgSrc: '/javascript-logo.png', altText: 'JavaScript Logo' },
-      { imgSrc: '/css-logo.png', altText: 'CSS Logo' },
       { imgSrc: '/html-logo.png', altText: 'HTML5 Logo' },
       { imgSrc: '/nodejs.png', altText: 'nodejs Logo' },
     ],

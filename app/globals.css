@@ -1,3 +1,4 @@
+/* styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,11 +7,11 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-    --primary: #605DFF;
-    --primary-light: #E6E5FF;
-    --secondary: #DFE6EE;
-    --secondary-background: #F4F6F9;
-    --secondary-text: #2E5A8C;
+  --primary: #605DFF;
+  --primary-light: #E6E5FF;
+  --secondary: #DFE6EE;
+  --secondary-background: #F4F6F9;
+  --secondary-text: #2E5A8C;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,6 +31,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
 /* original background */
 
 .Timeline-Works ol {

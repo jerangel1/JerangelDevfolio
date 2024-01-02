@@ -37,10 +37,10 @@ export default function About() {
         </div>
       </div>
 
-      <div className="sm:w-full text-center flex justify-center">
-        <div className="text-center bottom-0 w-full justify-center border-t border-gray-300 bg-gradient-to-t from-zinc-200 pb-6 pt-8 backdrop-blur-1xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30 hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
+      <div className="sm:w-full md:w-2/3 lg:w-1/2 text-center flex justify-center">
+      <div className="text-center bottom-0 w-full justify-center border-t border-gray-300 bg-gradient-to-t from-zinc-200 pb-6 pt-8 backdrop-blur-1xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30 hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
           <Link
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
+            className="flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
             href="/pages/buildingPortfolio"
             target="_blank"
             rel="noopener noreferrer"
