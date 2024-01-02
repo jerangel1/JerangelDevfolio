@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Particles from '../../components/particles';
+import Link from "next/link";
 
 const navigation = [
   { name: "About", href: "/about" },
@@ -38,22 +39,22 @@ export default function About() {
 
       <div className="sm:w-full text-center flex justify-center">
         <div className="text-center bottom-0 w-full justify-center border-t border-gray-300 bg-gradient-to-t from-zinc-200 pb-6 pt-8 backdrop-blur-1xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30 hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
-          <a
+          <Link
             className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
             href="/pages/buildingPortfolio"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {<span className="transform transition-transform group-hover:translate-x-3 motion-reduce:transform-none">-&gt;</span>}How I Built My Portfolio?{' '}
+            {<span className="justify-center inline-block transition-all group-hover:scale-110 group-hover:text-blue-500 motion-reduce:transform-none">-&gt;</span>}How I Built My Portfolio?{' '}
             <Image
               src="/icons8-build-64.png"
               alt="build Logo"
-              className=""
+              className=" justify-center inline-block transition-all group-hover:scale-110 group-hover:text-blue-500 motion-reduce:transform-none"
               width={64}
               height={24}
               priority
             />
-          </a>
+          </Link>
         </div>
       </div>
 

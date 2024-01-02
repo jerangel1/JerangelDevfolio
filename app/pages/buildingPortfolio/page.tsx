@@ -185,9 +185,9 @@ export default function howBuild() {
                 >
                   <Image
                     className=""
-                    src="/nodejsLogo.png"
-                    width={150}
-                    height={150}
+                    src="/nodejs.png"
+                    width={100}
+                    height={100}
                     alt="content layer Logo"
                   />
                 </h2>
@@ -206,8 +206,7 @@ export default function howBuild() {
               <article className="relative w-1xl h-full p-4 md:p-8">
                 <div className="flex items-center justify-between gap-2">
                   <div className="text-m text-zinc-100">
-                    Benefit from robust type safety and enhanced code structure, leading to fewer bugs, improved maintainability, and a developer-friendly experience
-                    {/* <span>SOON</span> */}
+                    Benefit from robust type safety and enhanced code structure, leading to fewer bugs and a developer-friendly experience
                   </div>
                   <span className="flex items-center gap-1 text-xs text-zinc-500">
 
@@ -220,16 +219,14 @@ export default function howBuild() {
                 >
                   <Image
                     className=""
-                    src="/typescriptLogo.png"
-                    width={150}
-                    height={150}
+                    src="/typescript.png"
+                    width={100}
+                    height={100}
                     alt="content layer Logo"
                   />
                 </h2>
-                <p className="mt-5 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
-                </p>
                 <div className="absolute bottom-4 md:bottom-8">
-                  <p className=" hidden text-zinc-200 hover:text-zinc-50 lg:block">
+                  <p className="mt-5 hidden text-zinc-200 hover:text-zinc-50 lg:block ">
                     Read more <span aria-hidden="true">&rarr;</span>
                   </p>
                 </div>
@@ -242,7 +239,7 @@ export default function howBuild() {
           <div className="flex flex-col items-center justify-center  gap-8 mx-auto  text-center  hover:border-gray-300 hover:bg-gray-200 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
             <p className="font-mono font-bold">Im always looking for new ways to improve my portfolio and this its my version 2.0, so Im excited to see what the future holds. Im always eager to explore new technologies and push my boundaries, so stay tuned for future enhancements and innovations!</p>
 
-            <p className="font-mono font-bold">Thanks for your Time. Happy browsing! <span className="inline-block transition-all group-hover:scale-110 group-hover:text-blue-500 motion-reduce:transform-none">💙</span></p>
+            <p className="font-mono font-bold">Thanks for your Time! <span className="inline-block transition-all group-hover:scale-110 group-hover:text-blue-500 motion-reduce:transform-none">💙</span></p>
           </div>
         </Card>
 

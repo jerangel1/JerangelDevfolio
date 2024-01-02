@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import { Rocket } from 'lucide-react';
 import { Navigation } from "../../components/nav";
+import Link from "next/link";
 
 const navigation = [
   { name: "About", href: "/pages/about" },
@@ -28,7 +29,7 @@ export default function Skills() {
         <iframe src="https://lottie.host/embed/42c31a9f-db5d-438c-8488-2945d105093f/AyobcxbbLF.json"></iframe>
         </p>
       </div>
-      <h2 className='text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl mb-10'>Frontend</h2>
+      <h2 className='text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl mb-5'>Frontend</h2>
       <div className="w-full h-px bg-zinc-800 mt-5" />
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-center">
         <a
@@ -134,7 +135,7 @@ export default function Skills() {
           </p>
         </a>
       </div>
-      <h2 className='text-3xl font-bold tracking-tight text-zinc-100 mt-10 mb-10  sm:text-4xl mt-10 mb-10'>Backend</h2>
+      <h2 className='text-3xl font-bold tracking-tight text-zinc-100 mt-10  sm:text-4xl mt-10'>Backend</h2>
       <div className="w-full h-px bg-zinc-800 mt-5" />
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-center">
         <a
@@ -232,7 +233,7 @@ export default function Skills() {
           </p>
         </a>
       </div>
-      <h2 className='text-3xl font-bold tracking-tight text-zinc-100 mt-10 mb-10 sm:text-4xl mt-10 mb-10'>Frameworks</h2>
+      <h2 className='text-3xl font-bold tracking-tight text-zinc-100 mt-10 mb-10 sm:text-4xl mt-10 mb-5'>Frameworks</h2>
       <div className="w-full h-px bg-zinc-800 mt-5" />
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-center">
         <a
