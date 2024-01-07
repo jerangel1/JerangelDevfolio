@@ -18,6 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`bg-black ${inter.className}`}>{children}</body>
+      <script
+        async
+        defer
+        src="../path/to/flowbite/dist/flowbite.min.js"
+      ></script>
     </html>
   );
 }
