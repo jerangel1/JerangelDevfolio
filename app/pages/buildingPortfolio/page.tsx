@@ -136,7 +136,6 @@ export default function howBuild() {
                 <div className="flex items-center justify-between gap-2">
                   <div className="text-m text-zinc-100">
                     This content management platform makes it easy to create and organize content.
-                    {/* <span>SOON</span> */}
                   </div>
                   <span className="flex items-center gap-1 text-xs text-zinc-500">
 
@@ -172,7 +171,6 @@ export default function howBuild() {
                 <div className="flex items-center justify-between gap-2">
                   <div className="text-m text-zinc-100">
                     Node.js and its ubiquitous package manager, npm, for dependency management and efficient installation of essential tools
-                    {/* <span>SOON</span> */}
                   </div>
                   <span className="flex items-center gap-1 text-xs text-zinc-500">
 

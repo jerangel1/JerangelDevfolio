@@ -1,6 +1,6 @@
 export const HeaderWork = () => {
     return (
-<div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
+<div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32 mb-15">
         <div className="max-w-2xl mx-auto lg:mx-0">
           <div className="flex items-center justify-center">
             <iframe src="https://lottie.host/embed/3945cf96-0368-4bf5-b18e-fde844ca8201/kwqjXGwoDk.json"></iframe>
@@ -12,7 +12,6 @@ export const HeaderWork = () => {
             In this section, I showcase my professional journey, spanning three distinct landscapes: tourism, logistics, and web development.
           </p>
         </div>
-        
       </div>
     )
 }

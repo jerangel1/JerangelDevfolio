@@ -45,14 +45,14 @@ body {
   margin-bottom: 1rem;
 }
 
-.Timeline-Works li::before {
+/* .Timeline-Works li::before {
   content: '';
   position: absolute;
   top: 0.5rem;
   left: -0.25rem;
   width: 0.5rem;
   height: 0.5rem;
-  background-color: #4a5568; /* Puedes cambiar el color */
+  background-color: #4a5568; 
   border-radius: 50%;
-  border: 2px solid #cbd5e0; /* Puedes cambiar el color */
-}
+  border: 2px solid #cbd5e0; 
+} */
