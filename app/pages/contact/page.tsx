@@ -4,22 +4,23 @@ import { BsTwitterX } from "react-icons/bs";
 import Link from "next/link";
 import { Navigation } from "../../components/nav";
 import { Card } from "../../components/card";
+import React from 'react';
 
 const socials = [
 	{
-		icon: <BsTwitterX  size={38} />,
+		icon: <BsTwitterX  size={20} />,
 		href: "https://twitter.com/jerangel1",
 		label: "Twitter",
 		handle: "@Jerangel1",
 	},
 	{
-		icon: <Mail size={38} />,
-		href: "mailto:Jerangel1691@gmail.com",
+		icon: <Mail size={20} />,
+		href: "jerangel1691@gmail.com",
 		label: "Email",
-		handle: "Jerangel1691@gmail.com",
+		handle: "jerangel1691@gmail.com",
 	},
 	{
-		icon: <Linkedin size={38} />,
+		icon: <Linkedin size={20} />,
 		href: "https://www.linkedin.com/in/jerangel1/",
 		label: "Linkedin",
 		handle: "Jerangel1",
@@ -28,10 +29,10 @@ const socials = [
 
 export default function contact() {
 	return (
-		<div className=" bg-gradient-to-tl from-zinc-400/0 via-zinc-1500 to-zinc-1100/0">
+		<div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
 			<Navigation />
 			<div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
-				<div className="grid w-full grid-cols-1 gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-19">
+				<div className="grid w-full grid-cols-1 gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-16">
 					{socials.map((s) => (
 						<Card key={s.handle}>
 							<Link
@@ -43,11 +44,11 @@ export default function contact() {
 									className="absolute w-px h-2/3 bg-gradient-to-b from-zinc-500 via-zinc-500/50 to-transparent"
 									aria-hidden="true"
 								/>
-								<span className="relative z-10 flex items-center justify-center w-40 h-25 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange">
+								<span className="relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange">
 									{s.icon}
 								</span>{" "}
 								<div className="z-10 flex flex-col items-center">
-									<span className="lg:text-xl font-medium duration-150 xl:text-3xl text-white-300 group-hover:text-white font-display">
+									<span className="lg:text-sm font-medium duration-150 xl:text-3xl text-zinc-200 group-hover:text-white font-display">
 										{s.handle}
 									</span>
 									<span className="mt-4 text-sm text-center duration-1000 text-zinc-400 group-hover:text-zinc-200">
