@@ -135,7 +135,7 @@ export default function Skills() {
           </p>
         </a>
       </div>
-      <h2 className='text-3xl font-bold tracking-tight text-zinc-100 mt-10  sm:text-4xl mt-10'>Backend</h2>
+      <h2 className='text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl mt-10'>Backend</h2>
       <div className="w-full h-px bg-zinc-800 mt-5" />
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-center">
         <a
@@ -233,7 +233,7 @@ export default function Skills() {
           </p>
         </a>
       </div>
-      <h2 className='text-3xl font-bold tracking-tight text-zinc-100 mt-10 mb-10 sm:text-4xl mt-10 mb-5'>Frameworks</h2>
+      <h2 className='text-3xl font-bold tracking-tight text-zinc-100 mt-10 mb-10 sm:text-4xl '>Frameworks</h2>
       <div className="w-full h-px bg-zinc-800 mt-5" />
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-center">
         <a
