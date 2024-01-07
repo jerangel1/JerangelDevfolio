@@ -2,8 +2,11 @@
 import { Navigation } from "../../components/nav";
 import { HeaderWork } from "../../components/HeaderWork"
 import Particles from '../../components/particles';
-import React from 'react';
 import ExperienceItem from '../../components/experienceItem';
+import { Parallax } from 'react-parallax';
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { CarouselOrientation } from '../../components/CarrouselWork';
 
 const experiences = [
   {
@@ -49,29 +52,59 @@ const experiences = [
   }
 ];
 
-export default function works() {
+const Works = () => {
+  const [scrollScale, setScrollScale] = useState(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      const scale = Math.max(0.5, 1 - scrollY / (window.innerHeight / 2));
+      setScrollScale(scale);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const parallaxZoomStyle = {
+    transform: `scale(${1 + scrollScale})`,
+    transition: 'transform 0.9s ease-out', // Adjust the duration and timing function as needed
+  };
+
   return (
     <div className="flex flex-col gap-8 mt-15">
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={1000}
       />
-      {<Navigation />}
-      {<HeaderWork />}
+      <Navigation />
       {/* line like <HR> */}
-      <div className="w-full h-px bg-zinc-800 " />
+      {/* <div className="w-full h-px bg-zinc-800 scroll-container mb-15" style={parallaxZoomStyle} /> */}
       {/* line like <HR> */}
+      <Parallax strength={500}>
+        <div className="header" style={{ transform: `scale(${1 + scrollScale})` }}>
+          <Image className="header-image" src="" width={800} height={1000} alt="spaceman" />
+        </div>
+      </Parallax>
       <div className="flex flex-col items-center mt-35">
-        {/* <TimelineComponent /> */}
         <div className="Timeline-Works w-full md:w-1/3 mx-auto">
-          <ol className="relative border-s border-gray-200 ml-3">
-            {
-              experiences.map((experience) => (
-                <li className="mb-8 md:mb-14 ms-0 md:ms-8" key={experience.id}>
-                  <ExperienceItem key={experience.id} experience={experience} />
-                </li>
-              ))
-            }
+          <ol className="relative border-s border-gray-200 ml-3 mt-15">
+            {experiences.map((experience, index) => (
+              <li
+                className="mb-8 md:mb-14 ms-0 md:ms-8"
+                key={experience.id}
+                style={{
+                  transform: `scale(${1 + scrollScale})`,
+                  transition: `transform 1.5s ease-out, opacity 0.4s ease-out`,
+                  transitionDelay: `${index * 0.2}s`, // Adjust the delay as needed
+                }}
+              >
+                <ExperienceItem experience={experience} />
+              </li>
+            ))}
           </ol>
         </div>
         <div className="flex justify-center items-center mb-10">
@@ -79,5 +112,7 @@ export default function works() {
         </div>
       </div>
     </div>
-    )
-}
+  );
+};
+
+export default Works;
