@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import {Button, ButtonGroup} from "@nextui-org/button";
 
 export const Accordion = () => {
   const [openSection, setOpenSection] = useState<number | null>(null);
@@ -74,12 +75,7 @@ export const Accordion = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <p className="dark:text-gray-400 inline-block w-auto group p-1 dark:hover:bg-gray-700 hover:shadow-md hover:rounded-md transition-all">
-            More info {""}
-            <span className="inline-block transition-transform group-hover:translate-x-4 hover:scale-110">
-              -&gt;
-            </span>
-          </p>
+          <Button className="group rounded-lg border border-transparent px-5  transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">More info</Button>
         </Link>
       </div>
     </div>

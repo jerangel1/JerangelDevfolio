@@ -19,6 +19,7 @@
     "@mui/material": "^5.15.3",
     "@mui/styled-engine-sc": "^6.0.0-alpha.11",
     "@next/mdx": "^14.0.4",
+    "@nextui-org/button": "^2.0.26",
     "@types/mdx": "^2.0.10",
     "class-variance-authority": "^0.7.0",
     "flowbite-react": "^0.7.2",
