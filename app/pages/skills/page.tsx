@@ -15,7 +15,7 @@ const navigation = [
 
 export default function Skills() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 animate-fadein  animate-title">
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 ">
       {<Navigation />}
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex lg:flex-col">
         {/* Párrafo 1 - Dive into my Skills */}
@@ -35,8 +35,6 @@ export default function Skills() {
             src="https://lottie.host/embed/42c31a9f-db5d-438c-8488-2945d105093f/AyobcxbbLF.json"
           ></iframe>
         </p>
-
-        {/* Otro código que tengas... */}
       </div>
       <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl mb-5">
         Frontend
@@ -151,11 +149,11 @@ export default function Skills() {
         </Link>
       </div>
       {/* SECTION BACKEND */}
-      <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl mt-10">
+      <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl mb-5 mt-10">
         Backend
       </h2>
       <div className="w-full h-px bg-zinc-800 mt-5" />
-      <div className="mb-20 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-center">
+      <div className="mb-20 mt-20 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-center">
         <Link
           href="https://nodejs.org/en"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
@@ -258,11 +256,11 @@ export default function Skills() {
         </Link>
       </div>
       {/* FRAMEWORKS */}
-      <h2 className="text-3xl font-bold tracking-tight text-zinc-100 mt-10 mb-10 sm:text-4xl ">
+      <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl mb-5 mt-10">
         Frameworks
       </h2>
-      <div className="w-full h-px bg-zinc-800 mt-5" />
-      <div className="mb-20 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-center">
+      <div className="w-full h-px bg-zinc-800" />
+      <div className="mb-20 mt-20 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-center">
         <Link
           href="https://es.react.dev/"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
