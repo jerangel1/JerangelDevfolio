@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import Image from 'next/image'
 import Link from 'next/link';
 import { useEffect } from 'react';
@@ -10,13 +10,13 @@ export default function Home() {
   useEffect(() => {
     const titleElement = document.querySelector('.animate-title');
     if (titleElement) {
-      titleElement.classList.add('animate-title'); // Trigger the animation
+      titleElement.classList.add('animate-title'); 
     }
   }, []);
 
   return (
-    <main className="dark flex min-h-screen flex-col items-center justify-between p-24 overflow-x-hidden animate-fade-in">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex mt-8">
+    <main className="dark flex min-h-screen flex-col items-center justify-between p-24 overflow-x-hidden">
+      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex mt-8 animate-fade-in">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Get started checking &nbsp;
           <a href="/pages/portfolio" target="_blank" className="dark:green">
@@ -68,7 +68,7 @@ export default function Home() {
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-          Full-Stack Developer Crafting Engaging Digital Experiences
+            Full-Stack Developer Crafting Engaging Digital Experiences
           </p>
         </Link>
 
@@ -85,7 +85,7 @@ export default function Home() {
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-          Explore my work history to witness my evolution.
+            Explore my work history to witness my evolution.
           </p>
         </Link>
 
@@ -102,7 +102,7 @@ export default function Home() {
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-          Bringing ideas to life with React, JavaScript, and TypeScript. 
+            Bringing ideas to life with React, JavaScript, and TypeScript. 
           </p>
         </Link>
 
@@ -119,7 +119,7 @@ export default function Home() {
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-          Ready to take the first step? Lets discuss your idea today.
+            Ready to take the first step? Lets discuss your idea today.
           </p>
         </Link>
       </div>
