@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {Button, ButtonGroup} from "@nextui-org/button";
+
 
 export const Accordion = () => {
   const [openSection, setOpenSection] = useState<number | null>(null);
@@ -75,7 +75,7 @@ export const Accordion = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button className="group rounded-lg border border-transparent px-5  transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">More info</Button>
+          <button className="group rounded-lg border border-transparent px-5  transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">More info</button>
         </Link>
       </div>
     </div>
