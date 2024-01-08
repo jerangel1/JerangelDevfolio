@@ -50,7 +50,7 @@ export default function About() {
       </div>
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
-        quantity={700}
+        quantity={1200}
       />
     </main>
   );
