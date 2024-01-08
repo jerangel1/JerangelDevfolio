@@ -2,7 +2,6 @@ import Image from "next/image";
 import Particles from "../../components/particles";
 import Link from "next/link";
 import { Accordion } from "@/app/components/accordion";
-import "flowbite";
 import { Modal } from "flowbite";
 import type { ModalOptions, ModalInterface } from "flowbite";
 
