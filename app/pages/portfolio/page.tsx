@@ -29,18 +29,19 @@ const navigation = [
   { name: "Projects", href: "/pages/projects" },
 ];
 
-const projects = [
+const projects: Project[] = [
   {
     id: 1,
-    name: 'App Web to shared photos & Videos',
+    name: 'Web app for events',
     imgSrc: '/projects-img/BODARK.png',
     altText: 'App web photos y videos',
     techStack: [
       { imgSrc: '/html-logo.png', altText: 'HTML5 Logo' },
       { imgSrc: '/css-logo.png', altText: 'CSS Logo' },
       { imgSrc: '/javascript-logo.png', altText: 'JavaScript Logo' },
+      { imgSrc: '/firebase-logo.png', altText: 'Firebase Logo' }
     ],
-    description: 'Witness the magic of shared memories! 📸 This enchanted website lets users summon photos to Firebase Storage and share them across digital realms. An epic pixelated adventure awaits!',
+    description: 'Leveraging HTML, CSS, and secure Firebase Storage, this platform boasts meticulous design and intuitive functionality. Figma-driven UI ensures consistent visuals across device.This platform was instrumental in the success of a recent wedding celebration. By enabling guests to contribute photos using a QR code, we eliminated 90% of photo management burden for the wedding couple. The platform also enriched the experience for guests by allowing them to share photos in real time, ❤️ Create a more engaging and memorable event.',
     previewLink: 'https://bodark20oct2023.web.app/',
   },
   {
@@ -51,13 +52,19 @@ const projects = [
     techStack: [
       { imgSrc: '/typescript.png', altText: 'Typescript Logo' },
       { imgSrc: '/javascript-logo.png', altText: 'JavaScript Logo' },
+      { imgSrc: '/next.svg', altText: 'Next Logo' },
+      { imgSrc: '/postgress.png', altText: 'Postgress logo' },
+      { imgSrc: '/logoReact.png', altText: 'React logo' },
     ],
-    description: "Unleash the power of the Dashboard! 📊 This mystical repository houses a Next.js spell, weaving together a complete dashboard application. Navigate through the realms of data with the finesse of a code ninja.",
+    description: `
+    I crafted a robust Financial Dashboard application from scratch using Next.js. This full-stack project showcases my expertise in building powerful and responsive web applications.
+
+  `,
     previewLink: 'https://nextjs-dashboard-seven-alpha-95.vercel.app/',
   },
   {
     id: 3,
-    name: 'Game of Mokepon!',
+    name: 'Multiplayer game',
     imgSrc: '/projects-img/MOKEPON.png',
     altText: 'Juego Mokepon',
     techStack: [
@@ -65,7 +72,7 @@ const projects = [
       { imgSrc: '/html-logo.png', altText: 'HTML5 Logo' },
       { imgSrc: '/nodejs.png', altText: 'nodejs Logo' },
     ],
-    description: "Embark on a pixelated quest! 🎮 Dive into a simple yet fierce battle in the game of Mokepon. Choose your mystical pet and unleash spells to conquer your digital foes..",
+    description: "Embark on Mokepon, my meticulously crafted fighting game that epitomizes technical excellence. Engineered with JavaScript, it intricately weaves game logic, showcasing sophisticated DOM manipulation and dynamic array structures. Deployment through Firebase ensures a seamless, high-performance gaming experience. 🎮",
     previewLink: 'https://apimokepon.firebaseapp.com/',
   },
   {
@@ -77,26 +84,23 @@ const projects = [
       { imgSrc: '/typescript.png', altText: 'Typescript Logo' },
       { imgSrc: '/javascript-logo.png', altText: 'JavaScript Logo' },
       { imgSrc: '/css-logo.png', altText: 'CSS Logo' },
+      { imgSrc: '/tailwind.png', altText: 'tailwind Logo' },
+      { imgSrc: '/uptashLogo.png', altText: 'uptash Logo' },
+      { imgSrc: '/logoReact.png', altText: 'React logo' },
+      { imgSrc: '/vercel.svg', altText: 'Vercel logo' },
     ],
-    description: "The website you're looking at",
+    description: "The website you're looking at 🔝",
     previewLink: 'http://www.jerangeldev.com/',
   },
-  
 ];
-
-/// Función para determinar el tamaño de un proyecto (usando el número de tecnologías utilizadas)
-const getProjectSize = (project: Project) => project.techStack.length;
-
-// Ordenar los proyectos por tamaño
-const sortedProjects = projects.sort((a, b) => getProjectSize(a) - getProjectSize(b));
 
 const Projects: React.FC = () => {
   return (
-    <div className="flex flex-col gap-8 mt-15">
+    <div className="flex flex-col gap-8 mt-15 overflow-x-hidden bg-gradient-to-tl from-black via-zinc-300/20 to-black">
       <Navigation />
       <HeaderProjects />
-      <div className="justify-center items-center sm:w-full mt-5 mb-16 p-8">
-        {sortedProjects.map((project) => (
+      <div className="flex flex-col items-center justify-center container mx-auto px-4 sm:px-8">
+        {projects.map((project) => (
           <ProjectItem key={project.id} project={project} />
         ))}
       </div>

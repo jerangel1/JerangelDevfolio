@@ -4,6 +4,9 @@ import { Rocket } from "lucide-react";
 import { Navigation } from "../../components/nav";
 import Link from "next/link";
 import Particles from "../../components/particles";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+
 
 const navigation = [
   { name: "About", href: "/pages/about" },
@@ -12,359 +15,285 @@ const navigation = [
   { name: "Contact", href: "/pages/contact" },
   { name: "Projects", href: "/pages/projects" },
 ];
+const sections = [
+  {
+    title: "Programming Languages",
+    items: [
+      {
+        title: "JavaScript",
+        href: "https://developer.mozilla.org/es/docs/Web/JavaScript",
+        logos: "/javascript-logo.png",
+        description:
+          "I utilize JavaScript to enhance user interfaces with interactivity, animations, and dynamic functionality on web pages.",
+      },
+      {
+        title: "TypeScript",
+        href: "https://www.typescriptlang.org/",
+        logos: "/typescript.png",
+        description:
+          "I leverage TypeScript, a superset of JavaScript, for scalable and maintainable web development projects, adding static typing for improved code quality.",
+      },
+      {
+        title: "HTML",
+        href: "https://www.freecodecamp.org/espanol/news/aprende-html-y-css-curso-desde-cero/",
+        logos: "/html-logo.png",
+        description:
+          "I use HTML to structure content and create visually appealing and responsive web pages.",
+      },
+      {
+        title: "CSS",
+        href: "https://css-tricks.com/",
+        logos: "/css-logo.png",
+        description:
+          "I apply CSS for styling and layout, ensuring a consistent and attractive presentation of web content across different devices.",
+      },
+      {
+        title: "Python",
+        href: "https://www.python.org/",
+        logos: "/python-logo.png",
+        description:
+          "I employ Python for various applications, including web development, scripting, and data analysis, leveraging its simplicity and versatility.",
+      },
+      {
+        title: "PHP",
+        href: "https://www.php.net/manual/es/intro-whatis.php",
+        logos: "/php.png",
+        description:
+          "I use PHP to develop dynamic and server-side web applications, integrating it seamlessly with databases for efficient data processing.",
+      },
+    ],
+  },
+  {
+    title: "Libraries & Frameworks",
+    items: [
+      {
+        title: "React",
+        href: "https://es.react.dev/",
+        logos: "/react.png",
+        description:
+          "I harness the power of React to build fast, scalable, and interactive user interfaces, creating seamless single-page applications.",
+      },
+      {
+        title: "Next.js",
+        href: "https://nextjs.org/",
+        logos: "/logoNext.png",
+        description:
+          "I utilize Next.js to enhance React applications with features like server-side rendering and optimized performance.",
+      },
+      {
+        title: "Tailwind CSS",
+        href: "https://tailwindcss.com/",
+        logos: "/tailwind.png",
+        description:
+          "I employ Tailwind CSS for efficient styling, streamlining the development process and ensuring consistent and maintainable designs.",
+      },
+      {
+        title: "Bootstrap",
+        href: "https://getbootstrap.com/",
+        logos: "/bootstrap-logo.png",
+        description:
+          "I use Bootstrap to create responsive and visually appealing designs, accelerating the development of mobile-friendly web applications.",
+      },
+      {
+        title: "Flask",
+        href: "https://flask.palletsprojects.com/en/3.0.x/",
+        logos: ["/flask.png"],
+        description:
+          "I leverage Flask to build lightweight and modular web applications in Python, focusing on simplicity and ease of use.",
+      },
+    ],
+  },
+  {
+    title: "Tools & Platforms",
+    items: [
+      {
+        title: "Node.js",
+        href: "https://nodejs.org/en",
+        logos: ["/nodejs.png"],
+        description:
+          "I use Node.js to develop scalable and server-side web applications, leveraging its asynchronous and event-driven architecture.",
+      },
+      {
+        title: "Git",
+        href: "https://git-scm.com/",
+        logos: ["/git.png"],
+        description:
+          "I utilize Git for version control, ensuring collaborative and efficient development workflows, and maintaining code integrity.",
+      },
+      {
+        title: "GitHub",
+        href: "https://github.com/",
+        logos: ["/github.png"],
+        description:
+          "I use GitHub as a collaborative platform for version control, code review, and project management, facilitating team collaboration.",
+      },
+      {
+        title: "Netlify",
+        href: "https://www.netlify.com/",
+        logos: ["/netlify.png"],
+        description:
+          "I deploy web applications seamlessly with Netlify, benefiting from its continuous integration, deployment, and serverless functions.",
+      },
+      {
+        title: "Vercel",
+        href: "https://vercel.com",
+        logos: ["/vercelLogo.png"],
+        description:
+          "I leverage Vercel for hosting and deploying applications with a focus on performance, scalability, and serverless functions.",
+      },
+      {
+        title: "WordPress",
+        href: "https://wordpress.com",
+        logos: ["/wordpress.png"],
+        description:
+          "I use WordPress to create dynamic and customizable websites, leveraging its user-friendly content management system.",
+      },
+      {
+        title: "Firebase",
+        href: "https://firebase.google.com",
+        logos: ["/firebase-logo.png"],
+        description:
+          "I integrate Firebase to develop real-time applications, leverage cloud services, and ensure seamless authentication and data storage.",
+      },
+      {
+        title: "Figma",
+        href: "https://www.figma.com",
+        logos: ["/figma.png"],
+        description:
+          "I use Figma for collaborative design and prototyping, streamlining the design-to-development workflow for web and mobile applications.",
+      },
+      {
+        title: "Canva",
+        href: "https://www.canva.com ",
+        logos: ["/canva.png"],
+        description:
+          "I use Canva for graphic design, creating visual content, and enhancing the overall aesthetics of various projects.",
+      },
+
+      {
+        title: "Docker",
+        href: "https://www.docker.com/",
+        logos: ["/docker.png"],
+        description:
+          "I implement Docker for containerization, enabling consistent deployment and scalability of applications across different environments.",
+      },
+    ],
+  },
+];
+interface LogoItemProps {
+  logos: string | string[];
+  alt: string;
+}
+
+const LogoItem: React.FC<LogoItemProps> = ({ logos, alt }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
+  const variants = {
+    hidden: { opacity: 0, scale: 0.25 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={variants}
+      className={`inline-block transition-transform ${
+        inView ? "group-hover:translate-y-1 motion-reduce:transform-none" : ""
+      }`}
+    >
+      {Array.isArray(logos) ? (
+        logos.map((logoSrc, index) => (
+          <motion.img
+            key={index}
+            src={logoSrc}
+            width={50}
+            height={50}
+            alt={alt}
+            className="inline-block transition-transform group-hover:translate-y-1 motion-reduce:transform-none"
+          />
+        ))
+      ) : (
+        <motion.img
+          src={logos}
+          width={50}
+          height={50}
+          alt={alt}
+          className="inline-block transition-transform group-hover:translate-y-1 motion-reduce:transform-none"
+        />
+      )}
+    </motion.div>
+  );
+};
 
 export default function Skills() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 ">
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 overflow-x-hidden bg-gradient-to-tl from-black via-zinc-300/20 to-black">
       {<Navigation />}
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex lg:flex-col">
-        {/* Párrafo 1 - Dive into my Skills */}
-        <p className="lg:hidden flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+        <p className="lg:hidden flex w-full justify-center border-b pb-6 pt-8  dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:p-4 ">
           Dive into my Skills
-          <Link href="/projects" target="_blank" className="dark:green">
+          <Link href="/projects" target="_blank" className="">
             <span className="transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               <Rocket />
             </span>
           </Link>
         </p>
-
-        {/* Párrafo 2 - iframe */}
-        <p className="lg:hidden flex w-full justify-center  bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:from-inherit lg:static lg:w-auto">
+        <p className="lg:hidden flex w-full justify-center  pb-6 pt-8  dark:from-inherit lg:static lg:w-auto">
           <iframe
-            className="bg:dark"
+            className=""
             src="https://lottie.host/embed/42c31a9f-db5d-438c-8488-2945d105093f/AyobcxbbLF.json"
           ></iframe>
         </p>
       </div>
-      <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl mb-5">
-        Frontend
-      </h2>
-      <div className="w-full h-px bg-zinc-800 mt-5" />
-      <div className="mb-20 mt-20 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-center">
-        <Link
-          href="https://www.freecodecamp.org/espanol/news/aprende-html-y-css-curso-desde-cero/"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Html5 y CSS{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <Image
-            className="inline-block transition-transform group-hover:translate-y-1 motion-reduce:transform-none"
-            src="/html-logo.png"
-            width={50}
-            height={50}
-            alt="HTML LOGO"
-          />
-          <Image
-            className="inline-block transition-transform group-hover:translate-y-1 motion-reduce:transform-none"
-            src="/css-logo.png"
-            width={50}
-            height={50}
-            alt="CSS LOGO"
-          />
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 mt-5`}>
-            I can use these technologies to create well-structured, responsive,
-            and visually appealing web pages.
-          </p>
-        </Link>
-
-        <Link
-          href="https://getbootstrap.com/"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Bootstrap{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <Image
-            className="inline-block transition-transform group-hover:translate-y-1 motion-reduce:transform-none"
-            src="/bootstrap-logo.png"
-            width={50}
-            height={50}
-            alt="Bootstrap Logo"
-          />
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 mt-5`}>
-            I can use Bootstrap, a popular CSS framework, to build responsive
-            and mobile-first web pages
-          </p>
-        </Link>
-
-        <Link
-          href="https://developer.mozilla.org/es/docs/Web/JavaScript"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            JavaScript{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <Image
-            className="inline-block transition-transform group-hover:translate-y-1 motion-reduce:transform-none"
-            src="/javascript-logo.png"
-            width={50}
-            height={50}
-            alt="javascript Logo"
-          />
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 mt-5`}>
-            I can use JavaScript to add interactivity and functionality to a web
-            page, such as animations, forms, and games.
-          </p>
-        </Link>
-
-        <Link
-          href="https://tailwindcss.com/"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Tailwind CSS{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <Image
-            className="inline-block transition-transform group-hover:translate-y-1 motion-reduce:transform-none"
-            src="/tailwind.png"
-            width={50}
-            height={50}
-            alt="Tailwind Logo"
-          />
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 mt-5`}>
-            A utility-first CSS framework. I can use Tailwind CSS to quickly and
-            easily build responsive and modern user interfaces
-          </p>
-        </Link>
-      </div>
-      {/* SECTION BACKEND */}
-      <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl mb-5 mt-10">
-        Backend
-      </h2>
-      <div className="w-full h-px bg-zinc-800 mt-5" />
-      <div className="mb-20 mt-20 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-center">
-        <Link
-          href="https://nodejs.org/en"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Node.js{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <Image
-            className="inline-block transition-transform group-hover:translate-y-1 motion-reduce:transform-none"
-            src="/nodejs.png"
-            width={50}
-            height={50}
-            alt="Nodejs Logo"
-          />
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 mt-5`}>
-            I can use Node.js to create server-side web applications.
-          </p>
-        </Link>
-
-        <Link
-          href="https://www.python.org/"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Python{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <Image
-            className="inline-block transition-transform group-hover:translate-y-1 motion-reduce:transform-none"
-            src="/python-logo.png"
-            width={50}
-            height={50}
-            alt="Python Logo"
-          />
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 mt-5`}>
-            I can use Python to Build server-side web applications with
-            frameworks such as Flask.
-          </p>
-        </Link>
-
-        <Link
-          href="https://www.mongodb.com/es"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            MongoDB{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <Image
-            className="inline-block transition-transform group-hover:translate-y-1 motion-reduce:transform-none"
-            src="/mongo-db.png"
-            width={50}
-            height={50}
-            alt="Mongodb Logo"
-          />
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 mt-5`}>
-            A document-oriented database that is often used for web
-            applications. I can use MongoDB to store data in Link flexible and
-            efficient way.
-          </p>
-        </Link>
-
-        <Link
-          href="https://www.php.net/manual/es/intro-whatis.php"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            PHP{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <Image
-            className="inline-block transition-transform group-hover:translate-y-1 motion-reduce:transform-none"
-            src="/php.png"
-            width={50}
-            height={50}
-            alt="PHP Logo"
-          />
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 mt-5`}>
-            I am proficient in PHP, Link general-purpose scripting language that
-            is often used for web development. I can use PHP to create dynamic
-            web pages and web applications.
-          </p>
-        </Link>
-      </div>
-      {/* FRAMEWORKS */}
-      <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl mb-5 mt-10">
-        Frameworks
-      </h2>
-      <div className="w-full h-px bg-zinc-800" />
-      <div className="mb-20 mt-20 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-center">
-        <Link
-          href="https://es.react.dev/"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            React:{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <Image
-            className="inline-block transition-transform group-hover:translate-y-1 motion-reduce:transform-none"
-            src="/react.png"
-            width={50}
-            height={50}
-            alt="React Logo"
-          />
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 mt-5`}>
-            I can use React to create fast, scalable, and interactive user
-            interfaces.
-          </p>
-        </Link>
-
-        <Link
-          href="https://nextjs.org/"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Next.js{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <Image
-            className="inline-block transition-transform group-hover:translate-y-1 motion-reduce:transform-none dark:invert"
-            src="/next.svg"
-            width={50}
-            height={50}
-            alt="Next Logo"
-          />
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 mt-5`}>
-            A React framework that makes it easy to build server-rendered and
-            static web applications.
-          </p>
-        </Link>
-
-        <Link
-          href="https://firebase.google.com/?gad_source=1&gclid=CjwKCAiA-bmsBhAGEiwAoaQNmijCWnoQJza7N8q3a44cDHoIBF1D4u1cgI_Lgd9ctVE5-P7UJUsW9hoCcukQAvD_BwE&gclsrc=aw.ds&hl=es-419"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Firebase{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <Image
-            className="inline-block transition-transform group-hover:translate-y-1 motion-reduce:transform-none "
-            src="/firebase-logo.png"
-            width={50}
-            height={50}
-            alt="Firebase Logo"
-          />
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 mt-5`}>
-            A platform that provides a variety of services for building and
-            deploying web applications. I can use Firebase to store data,
-            authenticate users, and send push notifications.
-          </p>
-        </Link>
-
-        <Link
-          href="https://vercel.com"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Vercel{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <Image
-            className="inline-block transition-transform group-hover:translate-y-1 motion-reduce:transform-none dark:invert "
-            src="/vercel.svg"
-            width={50}
-            height={50}
-            alt="Vercel Logo"
-          />
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 mt-5`}>
-            I am proficient in Vercel, a platform that provides a powerful and
-            easy-to-use hosting service for web applications.
-          </p>
-        </Link>
+      <div className="flex flex-col items-center">
+        {sections.map((section, index) => (
+          <div key={index} className="text-center lg:mt-20">
+            <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl  p-8">
+              {section.title}
+            </h2>
+            <div className="w-full h-px bg-zinc-800 mt-15" />
+            <div className="mb-20 mt-20 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-center">
+              {section.items.map((item, itemIndex) => (
+                <Link
+                  key={itemIndex}
+                  href={item.href}
+                  className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <h2 className="mb-3 text-2xl font-semibold">
+                    {item.title}
+                    <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                      -&gt;
+                    </span>
+                  </h2>
+                  {Array.isArray(item.logos) ? (
+                    item.logos.map((logo, logoIndex) => (
+                      <LogoItem
+                        key={logoIndex}
+                        logos={logo}
+                        alt={`${item.title} Logo`}
+                      />
+                    ))
+                  ) : (
+                    <LogoItem logos={item.logos} alt={`${item.title} Logo`} />
+                  )}
+                  <p className="m-0 max-w-[30ch] text-sm opacity-50 mt-5">
+                    {item.description}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
-        quantity={900}
+        quantity={1300}
       />
     </main>
   );

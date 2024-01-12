@@ -1,57 +1,103 @@
+"use client";
 import Image from "next/image";
 import Particles from "../../components/particles";
 import Link from "next/link";
-import { Accordion } from "@/app/components/accordion";
-
-
-const navigation = [
-  { name: "About", href: "/about" },
-  { name: "Work", href: "/work" },
-  { name: "Skills", href: "/skills" },
-  { name: "Contact", href: "/contact" },
-  { name: "Projects", href: "/projects" },
-];
+import "tailwindcss/tailwind.css";
+import { Navigation } from "../../components/nav";
+import NavLink from "../../components/NavLink";
+import { FaSalesforce, FaFreeCodeCamp } from "react-icons/fa";
+import { SiPlatzi, SiUpwork } from "react-icons/si";
+import { SlSocialLinkedin } from "react-icons/sl";
+import { Button } from "../../components/buttonSocials";
 
 export default function About() {
   return (
-    <main className="flex flex-col min-h-screen items-center justify-between p-4 md:p-8 lg:p-16">
-        <div className="flex items-center justify-center backdrop-blur-2xl bg-dark lg:static lg:w-auto lg:rounded-xl lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30 sm:w-full text-center mb-25">
-          <Accordion />
-        </div>
-      <div className="relative flex flex-col items-center lg:flex-row py-10">
-        <div className="lg:w-1/2 lg:mr-4 py-10">
-          <iframe src="https://lottie.host/embed/1b42b9b3-0187-4c82-a09d-c34ecb5e1a0d/Zu2IjUG0Zn.json"></iframe>
-        </div>
-        <h2 className="relative flex place-items-center text-3xl font-bold tracking-tight text-center lg:text-left text-zinc-100">
-          Hello, and welcome to my portfolio
-        </h2>
-      </div>
-      <div className="max-w-2xl text-center lg:text-left py-5">
-        <div
-          className="group rounded-lg border border-transparent px-5  transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          rel="noopener noreferrer"
-        >
-          <h3 className={`mb-10 text-xl text-center`}>
-            I am <b>full-stack developer</b> with 2 years of experience in web
-            development. I love the process of creating beautiful and functional
-            user experiences, and Im always looking for new ways to use
-            technology to solve problems.
-            <p className="mt-3">
-              Im also a quick learner and Im always up for a challenge.
-            </p>
-            <p className="font-mono font-bold mt-10">
-              Happy browsing!{" "}
-              <span className="inline-block transition-all group-hover:scale-110 group-hover:text-blue-500 motion-reduce:transform-none">
-                💙
-              </span>
-            </p>
-          </h3>
-        </div>
-      </div>
+    <>
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
-        quantity={1200}
+        quantity={1500}
       />
-    </main>
+      <main className="min-h-screen flex flex-col items-center justify-center p-8 lg:p-16 overflow-x-hidden bg-gradient-to-tl from-black via-zinc-300/20 to-black">
+        <Navigation />
+        <Button />
+        <div className="container mx-auto p-6 md:p-20 flex md:flex-row flex-col justify-center items-center text-center">
+          <section className="profile w-full mx-auto flex flex-col gap-10 justify-center text-center font-mono">
+            <h1 className="text-3xl dark:drop-shadow-[0_0_0.9rem_#ffffff70] mb-5 sm:mb-6">
+              Welcome to My Devfolio
+            </h1>
+            <p className="text-sm">
+              In June 2020, armed with no coding skills, I embarked on an
+              ambitious journey: building a website. Armed only with a Wix
+              account and unwavering determination, I dove into the digital
+              realm. The result? Success! Witnessing my ideas come to life
+              ignited a passion, guiding me down the path of self-taught coding.
+              Fast forward to today, and I proudly stand as a full-stack
+              developer. Yet, my love for code never wanes. I'm always learning,
+              pushing boundaries, fingers dancing on the keyboard like a maestro.
+              As they say, practice makes perfect. Beyond code, I balance family
+              time, immersing myself in comics, and conquering consoles. A proud
+              geek, I passionately discuss Batman and Star Wars nuances. When
+              night falls, I transform into a nocturnal coder, whispering, I'm
+              Batman.
+            </p>
+            <p className="mt-5 text-m">
+              <span className="dark:drop-shadow-[0_0_1.9rem_#ffffff70]">
+                Welcome to my world 💻
+              </span>
+              , where development and fun collide!
+            </p>
+          </section>
+          <section className="w-full mx-auto flex flex-col gap-10 justify-center text-center">
+            <NavLink
+              href="/pages/buildingPortfolio"
+              title="How I built my portfolio"
+              description=""
+              className="mb-8"
+            />
+            <div className="Certifications pt-4 flex">
+              <h2 className="text-2xl font-semibold mb-5 text-center">Certifications</h2>
+              <div className="text-4xl flex  items-center justify-center gap-7">
+                <Link
+                  href="/"
+                  className="hover:scale-125 transition-transform duration-300 transform"
+                >
+                  <FaSalesforce />
+                </Link>
+                <Link
+                  href="https://www.freecodecamp.org/Jerangel1"
+                  className="hover:scale-125 transition-transform duration-300 transform"
+                >
+                  <FaFreeCodeCamp />
+                </Link>
+                <Link
+                  href="https://platzi.com/p/jerangel1/"
+                  className="hover:scale-125 transition-transform duration-300 transform"
+                >
+                  <SiPlatzi />
+                </Link>
+                <Link
+                  href="/"
+                  className="hover:scale-125 transition-transform duration-300 transform"
+                >
+                  <SlSocialLinkedin />
+                </Link>
+                <Link
+                  href="https://www.upwork.com/freelancers/~012ff7c3bb8ddff457?viewMode=1"
+                  className="hover:scale-125 transition-transform duration-300 transform"
+                >
+                  <SiUpwork />
+                </Link>
+              </div>
+            </div>
+            <div className=" items-center justify-center text-center mt-10">
+              <iframe
+                className="w-40 h-40 font-bold tracking-tight text-zinc-100 dark:drop-shadow-[0_0_0.4rem_#ffffff70]"
+                src="https://lottie.host/embed/08959478-1e33-4e25-a721-9c887da852c6/ovTI83B1LJ.json"
+              ></iframe>
+            </div>
+          </section>
+        </div>
+      </main>
+    </>
   );
 }

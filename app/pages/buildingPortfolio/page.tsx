@@ -4,11 +4,52 @@ import React from "react";
 import { Navigation } from "../../components/nav";
 import { Card } from "../../components/card";
 import Image from 'next/image'
+import {TechnologyCard} from "@/app/components/TechnologyCard";
+
+// Datos de tecnologías
+const technologies = [
+  {
+    name: "Tailwind CSS",
+    description: "I used Tailwind CSS, a utility-first CSS framework that makes it easy to create responsive and custom layouts.",
+    logoSrc: "/tailwind.png",
+    link: "https://tailwindcss.com/",
+  },
+  {
+    name: "TypeScript",
+    description: "I leveraged TypeScript for robust type safety and enhanced code structure, leading to fewer bugs and a developer-friendly experience.",
+    logoSrc: "/typescript.png",
+    link: "https://www.typescriptlang.org/",
+  },
+  {
+    name: "Node.js",
+    description: "I utilized Node.js and its npm package manager for dependency management and efficient installation of essential tools, ensuring efficient backend development.",
+    logoSrc: "/nodejs.png",
+    link: "https://nodejs.org/en",
+  },
+  {
+    name: "Upstash",
+    description: "I integrated Upstash, a MongoDB database service providing scalable and reliable storage for my portfolio data, ensuring optimal performance.",
+    logoSrc: "/uptashLogo.png",
+    link: "https://upstash.com/",
+  },
+  {
+    name: "React",
+    description: "I developed my portfolio using React, a content management platform that makes it easy to create and organize content efficiently.",
+    logoSrc: "/LogoReact.png",
+    link: "https://react.dev/",
+  },
+  {
+    name: "Vercel",
+    description: "I deployed my portfolio on Vercel, a hosting platform that offers lightning-fast deployment and global scalability, ensuring an exceptional user experience.",
+    logoSrc: "/vercelLogo.png",
+    link: "http://vercel.com",
+  },
+];
 
 export default function howBuild() {
   return (
-    <div className="relative pb-16">
-      {<Navigation />}
+    <div className="relative pb-16 overflow-x-hidden bg-gradient-to-tl from-black via-zinc-300/20 to-black">
+      <Navigation />
       <div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
         <div className="max-w-2xl mx-auto lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
@@ -20,229 +61,12 @@ export default function howBuild() {
         </div>
         <div className="w-full h-px bg-zinc-800 " />
         <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">I also used the following technologies to build my portfolio</h2>
-        <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
-
-          {/* Tailwind Card */}
-          <Card>
-            <Link href='https://tailwindcss.com/'>
-              <article className="relative w-1xl h-full p-4 md:p-8">
-                <div className="flex items-center justify-between gap-2">
-                  <div className="text-m text-zinc-100">
-                    This utility-first CSS framework makes it easy to create responsive and custom layouts.
-                  </div>
-                  <span className="flex items-center gap-1 text-xs text-zinc-500">
-
-                  </span>
-                </div>
-
-                <h2
-                  id="featured-post"
-                  className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display"
-                >
-                  <Image
-                    className="dark:invert"
-                    src="/tailwindcssLogo.png"
-                    width={250}
-                    height={250}
-                    alt="Tailwind Logo"
-                  />
-                </h2>
-                <p className="mt-10 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
-                </p>
-                <div className="absolute bottom-4 md:bottom-8">
-                  <p className="hidden text-zinc-200 hover:text-zinc-50 lg:block">
-                    Read more <span aria-hidden="true">&rarr;</span>
-                  </p>
-                </div>
-              </article>
-            </Link>
-          </Card>
-          {/* uptash card */}
-          <Card>
-            <Link href='https://upstash.com/'>
-              <article className="relative w-1xl h-full p-4 md:p-8">
-                <div className="flex items-center justify-between gap-2">
-                  <div className="text-m text-zinc-100">
-                    This MongoDB database service provides a scalable and reliable way to store my portfolio data.
-                    {/* <span>SOON</span> */}
-                  </div>
-                  <span className="flex items-center gap-1 text-xs text-zinc-500">
-
-                  </span>
-                </div>
-
-                <h2
-                  id="featured-post"
-                  className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display"
-                >
-                  <Image
-                    className=""
-                    src="/uptashLogo.png"
-                    width={250}
-                    height={250}
-                    alt="Uptash Logo"
-                  />
-                </h2>
-                <p className="mt-10 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
-                </p>
-                <div className="absolute bottom-4 md:bottom-8">
-                  <p className="hidden text-zinc-200 hover:text-zinc-50 lg:block">
-                    Read more <span aria-hidden="true">&rarr;</span>
-                  </p>
-                </div>
-              </article>
-            </Link>
-          </Card>
-          {/* vercel card */}
-          <Card>
-            <Link href='http://vercel.com'>
-              <article className="relative w-1xl h-full p-4 md:p-8">
-                <div className="flex items-center justify-between gap-2">
-                  <div className="text-m text-zinc-100">
-                    This hosting platform provides lightning-fast deployment and global scalability
-                    {/* <span>SOON</span> */}
-                  </div>
-                  <span className="flex items-center gap-1 text-xs text-zinc-500">
-
-                  </span>
-                </div>
-
-                <h2
-                  id="featured-post"
-                  className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display"
-                >
-                  <Image
-                    className=""
-                    src="/vercelLogo.png"
-                    width={250}
-                    height={250}
-                    alt="Vercel Logo"
-                  />
-                </h2>
-                <p className="leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
-                </p>
-                <div className="absolute bottom-4 md:bottom-8">
-                  <p className="hidden text-zinc-200 hover:text-zinc-50 lg:block">
-                    Read more <span aria-hidden="true">&rarr;</span>
-                  </p>
-                </div>
-              </article>
-            </Link>
-          </Card>
-          {/* card contentlayer */}
-          <Card>
-            <Link href='https://contentlayer.dev'>
-              <article className="relative w-1xl h-full p-4 md:p-8">
-                <div className="flex items-center justify-between gap-2">
-                  <div className="text-m text-zinc-100">
-                    This content management platform makes it easy to create and organize content.
-                  </div>
-                  <span className="flex items-center gap-1 text-xs text-zinc-500">
-
-                  </span>
-                </div>
-
-                <h2
-                  id="featured-post"
-                  className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display"
-                >
-                  <Image
-                    className=""
-                    src="/ContentLayerLogo.png"
-                    width={150}
-                    height={150}
-                    alt="content layer Logo"
-                  />Contentlayer
-                </h2>
-                <p className="leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
-                </p>
-                <div className="absolute bottom-4 md:bottom-8">
-                  <p className="hidden text-zinc-200 hover:text-zinc-50 lg:block">
-                    Read more <span aria-hidden="true">&rarr;</span>
-                  </p>
-                </div>
-              </article>
-            </Link>
-          </Card>
-          {/* Card node.js */}
-          <Card>
-            <Link href='https://nodejs.org/en'>
-              <article className="relative w-1xl h-full p-4 md:p-8">
-                <div className="flex items-center justify-between gap-2">
-                  <div className="text-m text-zinc-100">
-                    Node.js and its ubiquitous package manager, npm, for dependency management and efficient installation of essential tools
-                  </div>
-                  <span className="flex items-center gap-1 text-xs text-zinc-500">
-
-                  </span>
-                </div>
-
-                <h2
-                  id="featured-post"
-                  className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display"
-                >
-                  <Image
-                    className=""
-                    src="/nodejs.png"
-                    width={100}
-                    height={100}
-                    alt="content layer Logo"
-                  />
-                </h2>
-                <p className="mt-5 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
-                </p>
-                <div className="absolute bottom-4 md:bottom-8">
-                  <p className=" hidden text-zinc-200 hover:text-zinc-50 lg:block">
-                    Read more <span aria-hidden="true">&rarr;</span>
-                  </p>
-                </div>
-              </article>
-            </Link>
-          </Card>
-          <Card>
-            <Link href='https://www.typescriptlang.org/'>
-              <article className="relative w-1xl h-full p-4 md:p-8">
-                <div className="flex items-center justify-between gap-2">
-                  <div className="text-m text-zinc-100">
-                    Benefit from robust type safety and enhanced code structure, leading to fewer bugs and a developer-friendly experience
-                  </div>
-                  <span className="flex items-center gap-1 text-xs text-zinc-500">
-
-                  </span>
-                </div>
-
-                <h2
-                  id="featured-post"
-                  className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display"
-                >
-                  <Image
-                    className=""
-                    src="/typescript.png"
-                    width={100}
-                    height={100}
-                    alt="content layer Logo"
-                  />
-                </h2>
-                <div className="absolute bottom-4 md:bottom-8">
-                  <p className="mt-5 hidden text-zinc-200 hover:text-zinc-50 lg:block ">
-                    Read more <span aria-hidden="true">&rarr;</span>
-                  </p>
-                </div>
-              </article>
-            </Link>
-          </Card>
+        <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-3">
+          {technologies.map((tech, index) => (
+            <TechnologyCard key={index} {...tech} />
+          ))}
         </div>
-        {/* Footer Card */}
-        <Card>
-          <div className="flex flex-col items-center justify-center  gap-8 mx-auto  text-center  hover:border-gray-300 hover:bg-gray-200 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
-            <p className="font-mono font-bold">Im always looking for new ways to improve my portfolio and this its my version 2.0, so Im excited to see what the future holds. Im always eager to explore new technologies and push my boundaries, so stay tuned for future enhancements and innovations!</p>
-
-            <p className="font-mono font-bold">Thanks for your Time! <span className="inline-block transition-all group-hover:scale-110 group-hover:text-blue-500 motion-reduce:transform-none">💙</span></p>
-          </div>
-        </Card>
-
-
       </div>
     </div>
   );
-}
+          }

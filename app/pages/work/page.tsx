@@ -89,7 +89,7 @@ const experiences = [
 
 export default function Works() {
   return (
-    <div className="flex flex-col gap-8 mt-15 relative overflow-x-hidden p-7  ">
+    <div className="flex flex-col gap-8 mt-15 relative overflow-x-hidden p-7 bg-gradient-to-tl from-black via-zinc-300/20 to-black ">
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={1000}

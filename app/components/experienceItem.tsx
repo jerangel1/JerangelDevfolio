@@ -22,7 +22,7 @@ export interface ExperienceItemProps {
 const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience }) => {
   return (
     <ol className="mx-auto relative border-s border-gray-200 dark:border-gray-700">
-      <li className="rounded-lg border border-transparent transition-colors hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 mb-10 ms-4 hover:scale-105 p-5 w-full">
+      <li className="rounded-lg border border-transparent transition-colors hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 mb-10 ms-4  p-5 w-full">
         <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
         <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
           {experience.date}
