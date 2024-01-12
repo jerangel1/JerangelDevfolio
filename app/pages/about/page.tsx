@@ -17,12 +17,12 @@ export default function About() {
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={1500}
       />
-      <main className="min-h-screen flex flex-col items-center justify-center p-8 lg:p-16 overflow-x-hidden bg-gradient-to-tl from-black via-zinc-300/20 to-black">
+   <main className="min-h-screen flex flex-col items-center justify-center p-8 lg:p-16 overflow-x-hidden bg-gradient-to-tl from-black via-zinc-300/20 to-black">
         <Navigation />
         <Button />
         <div className="container mx-auto p-6 md:p-20 flex md:flex-row flex-col justify-center items-center text-center">
-          <section className="profile w-full mx-auto flex flex-col gap-10 justify-center text-center font-mono">
-            <h1 className="text-3xl dark:drop-shadow-[0_0_0.9rem_#ffffff70] mb-5 sm:mb-6">
+          <section className="profile w-full mx-auto flex flex-col gap-10 justify-center text-center font-mono sm:mt-12 md:mt-0">
+            <h1 className="text-3xl dark:drop-shadow-[0_0_0.9rem_#ffffff70] mb-5 sm:mb-6 ">
               Welcome to My Devfolio
             </h1>
             <p className="text-sm">
@@ -52,11 +52,11 @@ export default function About() {
               href="/pages/buildingPortfolio"
               title="How I built my portfolio"
               description=""
-              className="mb-8"
+              className=" mt-10 mb-5 md:mb-8"
             />
-            <div className="Certifications pt-4 flex">
-              <h2 className="text-2xl font-semibold mb-5 text-center">Certifications</h2>
-              <div className="text-4xl flex  items-center justify-center gap-7">
+            <div className="Certifications pt-4 justify-center text-center">
+              <h2 className="text-2xl font-semibold mb-5 justify-center text-center md:text-left">Certifications</h2>
+              <div className="text-4xl flex  items-center justify-center md:justify-start gap-8">
                 <Link
                   href="/"
                   className="hover:scale-125 transition-transform duration-300 transform"
@@ -89,7 +89,7 @@ export default function About() {
                 </Link>
               </div>
             </div>
-            <div className=" items-center justify-center text-center mt-10">
+            <div className="mt-10 mx-auto">
               <iframe
                 className="w-40 h-40 font-bold tracking-tight text-zinc-100 dark:drop-shadow-[0_0_0.4rem_#ffffff70]"
                 src="https://lottie.host/embed/08959478-1e33-4e25-a721-9c887da852c6/ovTI83B1LJ.json"
