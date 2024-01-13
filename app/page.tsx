@@ -4,13 +4,20 @@ import Particles from "./components/particles";
 import Image from "next/image";
 import NavLink from "./components/NavLink";
 
-
 const navigation = [
   { name: "Projects", href: "/pages/portfolio" },
   { name: "Contact", href: "/pages/contact" },
 ];
-
 export default function Home() {
+  // Aplicar tema oscuro aquí al cargar la página
+  document.body.classList.add('dark-theme');
+  
+  // Asegúrate de limpiar al desmontar el componente
+  React.useEffect(() => {
+    return () => {
+      document.body.classList.remove('dark-theme');
+    };
+  }, []);
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
       <nav className="my-16 animate-fade-in">
@@ -34,7 +41,7 @@ export default function Home() {
       <h1 className="z-10 text-4xl text-transparent duration-3000 bg-white bg-opacity-90 cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text                                 ">
         Jesús Rangel
       </h1>
-      <p className="mt-5 text-4xl dark:drop-shadow-[0_0_0.7rem_#ffffff70]">
+      <p className="text-transparent mt-5 text-4xl dark:drop-shadow-[0_0_0.7rem_#ffffff70]">
         Full Stack developer
       </p>
 
