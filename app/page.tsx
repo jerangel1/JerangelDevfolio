@@ -34,10 +34,10 @@ export default function Home() {
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={1000}
       />
-      <h1 className="z-10 text-4xl text-transparent duration-3000 bg-white bg-opacity-90 cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text                                 ">
+      <h1 className="z-10 text-3xl text-transparent duration-3000 bg-white bg-opacity-90 cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text">
         Jesús Rangel
       </h1>
-      <p className="text-transparent mt-5 text-4xl dark:drop-shadow-[0_0_0.7rem_#ffffff70]">
+      <p className="text-transparent bg-white mt-5 text-4xl dark:drop-shadow-[0_0_0.7rem_#ffffff70]">
         Full Stack developer
       </p>
 
