@@ -7,9 +7,7 @@ import { FcDocument } from "react-icons/fc";
 import Link from "next/link";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { History } from "lucide-react";
 import { X } from 'lucide-react';
-import { blueGrey } from "@mui/material/colors";
 import Image from "next/image"
 
 const Icon: FC<PropsWithChildren> = ({ children }) => (

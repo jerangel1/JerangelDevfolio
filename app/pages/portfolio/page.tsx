@@ -54,7 +54,7 @@ const projects: Project[] = [
       { imgSrc: '/javascript-logo.png', altText: 'JavaScript Logo' },
       { imgSrc: '/next.svg', altText: 'Next Logo' },
       { imgSrc: '/postgress.png', altText: 'Postgress logo' },
-      { imgSrc: '/logoReact.png', altText: 'React logo' },
+      { imgSrc: '/LogoReact.png', altText: 'React logo' },
     ],
     description: `
     I crafted a robust Financial Dashboard application from scratch using Next.js. This full-stack project showcases my expertise in building powerful and responsive web applications.
@@ -86,7 +86,7 @@ const projects: Project[] = [
       { imgSrc: '/css-logo.png', altText: 'CSS Logo' },
       { imgSrc: '/tailwind.png', altText: 'tailwind Logo' },
       { imgSrc: '/uptashLogo.png', altText: 'uptash Logo' },
-      { imgSrc: '/logoReact.png', altText: 'React logo' },
+      { imgSrc: '/LogoReact.png', altText: 'React logo' },
       { imgSrc: '/vercel.svg', altText: 'Vercel logo' },
     ],
     description: "The website you're looking at 🔝",
