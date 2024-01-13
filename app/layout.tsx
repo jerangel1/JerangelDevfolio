@@ -1,14 +1,16 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import React from 'react';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import React from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Jesus Rangel | Full Stack Developer',
-  description: 'Bringing ideas to life with React, JavaScript, and TypeScript. Ready to take the first step? Lets discuss your idea today. ',
-}
+  title: "Jesus Rangel | Full Stack Developer",
+  description:
+    "Bringing ideas to life with React, JavaScript, and TypeScript. Ready to take the first step? Lets discuss your idea today. ",
+};
 
 export default function RootLayout({
   children,
@@ -17,7 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`bg-black ${inter.className}`}>{children}</body>
+      <body className={`dark bg-black ${inter.className}`}>
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   );
 }

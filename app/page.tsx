@@ -9,17 +9,8 @@ const navigation = [
   { name: "Contact", href: "/pages/contact" },
 ];
 export default function Home() {
-  // Aplicar tema oscuro aquí al cargar la página
-  document.body.classList.add('dark-theme');
-  
-  // Asegúrate de limpiar al desmontar el componente
-  React.useEffect(() => {
-    return () => {
-      document.body.classList.remove('dark-theme');
-    };
-  }, []);
   return (
-    <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
+    <div className="dark flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
       <nav className="my-16 animate-fade-in">
         <ul className="flex items-center justify-center gap-4">
           {navigation.map((item) => (

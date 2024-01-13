@@ -17,7 +17,7 @@ export default function About() {
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={1500}
       />
-   <main className="min-h-screen flex flex-col items-center justify-center p-8 lg:p-16 overflow-x-hidden bg-gradient-to-tl from-black via-zinc-300/20 to-black">
+   <main className="dark min-h-screen flex flex-col items-center justify-center p-8 lg:p-16 overflow-x-hidden bg-gradient-to-tl from-black via-zinc-300/20 to-black">
         <Navigation />
         <CustomButton />
         <div className="container mx-auto p-6 md:p-20 flex md:flex-row flex-col justify-center items-center text-center">
