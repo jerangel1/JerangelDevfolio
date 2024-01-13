@@ -277,6 +277,7 @@ export default function Skills() {
                         key={logoIndex}
                         logos={logo}
                         alt={`${item.title} Logo`}
+                        layout=responsive
                       />
                     ))
                   ) : (
