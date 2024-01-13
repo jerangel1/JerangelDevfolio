@@ -1,15 +1,20 @@
+'use client'
 import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
 import Image from "next/image";
 import NavLink from "./components/NavLink";
+// DarkModeContext.js
+import { DarkModeProvider } from "./DarkModeContext";
 
 const navigation = [
   { name: "Projects", href: "/pages/portfolio" },
   { name: "Contact", href: "/pages/contact" },
 ];
 export default function Home() {
+  
   return (
+    <DarkModeProvider>
     <div className="dark flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
       <nav className="my-16 animate-fade-in">
         <ul className="flex items-center justify-center gap-4">
@@ -61,5 +66,6 @@ export default function Home() {
     </h2>
       </div>
     </div>
+    </DarkModeProvider>
   );
 }

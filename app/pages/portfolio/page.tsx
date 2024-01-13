@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import ProjectItem from "../../components/projectsComponents";
 import { Navigation } from "../../components/nav";
 import { HeaderProjects } from "../../components/HeaderProjects";
+// DarkModeContext.js
+import { DarkModeProvider } from "../../DarkModeContext";
 
 interface Tech {
   imgSrc: string;
@@ -95,16 +97,19 @@ const projects: Project[] = [
 ];
 
 const Projects: React.FC = () => {
+
   return (
+    <DarkModeProvider>
     <div className="dark flex flex-col gap-5 mt-15 overflow-x-hidden bg-gradient-to-tl from-black via-zinc-300/20 to-black">
       <Navigation />
       <HeaderProjects />
-      <div className="flex flex-col items-center justify-center container mx-auto px-4 sm:px-8">
+      <div className="flex flex-col items-center justify-center container p-5 mx-auto px-4 sm:px-8">
         {projects.map((project) => (
           <ProjectItem key={project.id} project={project} />
         ))}
       </div>
     </div>
+    </DarkModeProvider>
   );
 };
 

@@ -6,6 +6,8 @@ import Link from "next/link";
 import Particles from "../../components/particles";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+// DarkModeContext.js
+import { DarkModeProvider } from "../../DarkModeContext";
 
 
 const navigation = [
@@ -231,6 +233,7 @@ const LogoItem: React.FC<LogoItemProps> = ({ logos, alt }) => {
 
 export default function Skills() {
   return (
+    <DarkModeProvider>
     <main className="dark flex min-h-screen flex-col items-center justify-between p-24 overflow-x-hidden bg-gradient-to-tl from-black via-zinc-300/20 to-black">
       {<Navigation />}
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex lg:flex-col">
@@ -296,5 +299,6 @@ export default function Skills() {
         quantity={1300}
       />
     </main>
+    </DarkModeProvider>
   );
 }

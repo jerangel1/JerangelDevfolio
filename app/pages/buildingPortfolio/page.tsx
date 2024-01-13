@@ -5,6 +5,8 @@ import { Navigation } from "../../components/nav";
 import { Card } from "../../components/card";
 import Image from 'next/image'
 import {TechnologyCard} from "@/app/components/TechnologyCard";
+// DarkModeContext.js
+import { DarkModeProvider } from "../../DarkModeContext";
 
 // Datos de tecnologías
 const technologies = [
@@ -48,6 +50,7 @@ const technologies = [
 
 export default function howBuild() {
   return (
+    <DarkModeProvider>
     <div className=" dark relative pb-16 overflow-x-hidden bg-gradient-to-tl from-black via-zinc-300/20 to-black">
       <Navigation />
       <div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
@@ -68,5 +71,6 @@ export default function howBuild() {
         </div>
       </div>
     </div>
-  );
+    </DarkModeProvider>
+ )
           }

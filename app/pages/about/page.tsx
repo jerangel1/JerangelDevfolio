@@ -9,10 +9,13 @@ import { FaSalesforce, FaFreeCodeCamp } from "react-icons/fa";
 import { SiPlatzi, SiUpwork } from "react-icons/si";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { CustomButton } from "../../components/buttonSocials";
+// DarkModeContext.js
+import { DarkModeProvider } from "../../DarkModeContext";
 
 export default function About() {
   return (
     <>
+    <DarkModeProvider>
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={1500}
@@ -97,6 +100,7 @@ export default function About() {
           </section>
         </div>
       </main>
+      </DarkModeProvider>
     </>
   );
 }
