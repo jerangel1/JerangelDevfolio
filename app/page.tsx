@@ -32,7 +32,7 @@ export default function Home() {
         quantity={1000}
       />
       <h1 className="z-10 text-4xl text-transparent duration-3000 bg-white bg-opacity-90 cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text                                 ">
-        Jesus Rangel
+        Jesús Rangel
       </h1>
       <p className="mt-5 text-4xl dark:drop-shadow-[0_0_0.7rem_#ffffff70]">
         Full Stack developer

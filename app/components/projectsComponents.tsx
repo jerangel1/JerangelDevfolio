@@ -40,10 +40,10 @@ const ProjectItem = ({ project }: ProjectItemProps) => {
         <div className="p-4">
           <h2 className="text-lg font-bold mb-2">{project.name}</h2>
           <p className="text-gray-500 mb-4">{project.description}</p>
-          <div className="flex items-center mb-2">
+          <div className="flex items-center text-center justify-center mb-2">
             <p className="mr-2">Build with</p>
             <Wrench className="w-5 h-5 mr-2" />
-            <div className="flex items-center justify-center text-center space-x-2">
+            <div className="flex items-center justify-center text-center gap-4 space-x-2">
               {project.techStack.map((tech, index) => (
                 <TechButton key={index} imgSrc={tech.imgSrc} altText={tech.altText} />
               ))}

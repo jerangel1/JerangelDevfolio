@@ -8,7 +8,7 @@ import NavLink from "../../components/NavLink";
 import { FaSalesforce, FaFreeCodeCamp } from "react-icons/fa";
 import { SiPlatzi, SiUpwork } from "react-icons/si";
 import { SlSocialLinkedin } from "react-icons/sl";
-import { Button } from "../../components/buttonSocials";
+import { CustomButton } from "../../components/buttonSocials";
 
 export default function About() {
   return (
@@ -19,10 +19,10 @@ export default function About() {
       />
    <main className="min-h-screen flex flex-col items-center justify-center p-8 lg:p-16 overflow-x-hidden bg-gradient-to-tl from-black via-zinc-300/20 to-black">
         <Navigation />
-        <Button />
+        <CustomButton />
         <div className="container mx-auto p-6 md:p-20 flex md:flex-row flex-col justify-center items-center text-center">
-          <section className="profile w-full mx-auto flex flex-col gap-10 justify-center text-center font-mono sm:mt-12 md:mt-0">
-            <h1 className="text-3xl dark:drop-shadow-[0_0_0.9rem_#ffffff70] mb-5 sm:mb-6 ">
+          <section className="profile w-full mx-auto flex flex-col mb-10 gap-10 justify-center text-center font-mono sm:mt-12 md:mt-0">
+            <h1 className=" p-8 text-3xl dark:drop-shadow-[0_0_0.9rem_#ffffff70] sm:mb-6 ">
               Welcome to My Devfolio
             </h1>
             <p className="text-sm">
@@ -32,31 +32,30 @@ export default function About() {
               realm. The result? Success! Witnessing my ideas come to life
               ignited a passion, guiding me down the path of self-taught coding.
               Fast forward to today, and I proudly stand as a full-stack
-              developer. Yet, my love for code never wanes. I'm always learning,
+              developer. Yet, my love for code never wanes. Im always learning,
               pushing boundaries, fingers dancing on the keyboard like a maestro.
               As they say, practice makes perfect. Beyond code, I balance family
               time, immersing myself in comics, and conquering consoles. A proud
               geek, I passionately discuss Batman and Star Wars nuances. When
-              night falls, I transform into a nocturnal coder, whispering, I'm
+              night falls, I transform into a nocturnal coder, whispering, Im
               Batman.
             </p>
-            <p className="mt-5 text-m">
-              <span className="dark:drop-shadow-[0_0_1.9rem_#ffffff70]">
+            <p className=" text-m">
+              <span className="dark:drop-shadow-[0_0_1.9rem_#ffffff70] mb-10">
                 Welcome to my world 💻
               </span>
               , where development and fun collide!
             </p>
           </section>
-          <section className="w-full mx-auto flex flex-col gap-10 justify-center text-center">
+          <section className="w-full mx-auto flex flex-col gap-8 mb-15 p-5 justify-center text-center">
             <NavLink
               href="/pages/buildingPortfolio"
               title="How I built my portfolio"
               description=""
-              className=" mt-10 mb-5 md:mb-8"
             />
             <div className="Certifications pt-4 justify-center text-center">
-              <h2 className="text-2xl font-semibold mb-5 justify-center text-center md:text-left">Certifications</h2>
-              <div className="text-4xl flex  items-center justify-center md:justify-start gap-8">
+              <h2 className="text-2xl font-semibold mb-5  justify-center text-center ">Certifications</h2>
+              <div className="text-3xl flex  items-center justify-center gap-8">
                 <Link
                   href="/"
                   className="hover:scale-125 transition-transform duration-300 transform"
