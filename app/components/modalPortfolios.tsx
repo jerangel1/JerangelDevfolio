@@ -11,6 +11,7 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 400,
+  height: 200,  // Añadido: ajusta la altura según tus necesidades
   border: '2px solid #000',
   boxShadow: 34,
   p: 4,
@@ -19,9 +20,10 @@ const style = {
 const mobileStyle = {
   '@media (max-width: 600px)': {
     ...style,
-    width: '90%',
-    backdropFilter: 'blur(10px)', // Ajusta el valor del blur según tus necesidades
-    backgroundColor: 'rgba(255, 255, 255, 0.8)', // Ajusta el color y la opacidad del fondo
+    width: '70%',
+    height: 'auto',  // Añadido: ajusta la altura según tus necesidades
+    backdropFilter: 'blur(10px)',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
   },
 };
 
@@ -41,10 +43,10 @@ export default function BasicModal() {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-          Looking for a different site? 
+            Looking for a different site?
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-          Go back in time?...<History />
+            Go back in time?...<History />
           </Typography>
         </Box>
       </Modal>

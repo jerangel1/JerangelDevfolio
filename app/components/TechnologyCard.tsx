@@ -26,10 +26,9 @@ export const TechnologyCard: React.FC<TechnologyCardProps> = ({
             <Image
               className="dark:drop-shadow-[0_0_1.9rem_#ffffff70]"
               src={logoSrc}
-              width={50}
-              height={50}
+              width={70}
+              height={70}
               alt={`${name} Logo`}
-              layout="responsive"
             />
           </h3>
         </div>

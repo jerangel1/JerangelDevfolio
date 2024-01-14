@@ -10,8 +10,8 @@ interface NavLinkProps {
 const NavLink: React.FC<NavLinkProps> = ({ href, title, description }) => {
   return (
     <Link href={href} passHref>
-      <div className="dark:green animate-fade-in group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-400 hover:dark:bg-neutral-800/30">
-        <h2 className="mb-3 text-2xl font-semibold text-center">
+      <div className="dark:green animate-fade-in group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-400 hover:dark:bg-neutral-800/30 duration-500 text-zinc-500 hover:text-zinc-300">
+        <h2 className="mb-3 text-2xl font-semibold text-center ">
           {title}{" "}
           <span className=" inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
             -&gt;

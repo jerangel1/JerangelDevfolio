@@ -551,3 +551,11 @@ button {
  button:hover .button-text {
   color: #fff;
  }
+
+
+/* Fondo desenfocado para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .modal::before {
+    filter: blur(10px); /* Ajusta la cantidad de desenfoque para pantallas pequeñas */
+  }
+}

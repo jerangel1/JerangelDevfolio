@@ -7,7 +7,6 @@ import { FcDocument } from "react-icons/fc";
 import Link from "next/link";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { X } from "lucide-react";
 import Image from "next/image";
 
 const Icon: FC<PropsWithChildren> = ({ children }) => (
@@ -77,9 +76,8 @@ export const CustomButton = () => {
       >
         {/* Contenido del modal */}
         <div
-          className="text-white flex flex-col place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[460px] z-[-1]"
+          className="text-white flex flex-col place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[460px] z-[-1] "
           style={{
-            width: "100%",
             height: "100%",
             padding: "100px",
             marginTop: "145px",
@@ -91,7 +89,7 @@ export const CustomButton = () => {
             rel="noopener noreferrer"
             passHref
           >
-            <div className="gap-2 p-5 flex-col text-center group rounded-lg border border-transparent px-5 py-4 transition-colors mt-4">
+            <div className="gap-2 p-5 flex-col text-center group rounded-lg border border-transparent hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-400 hover:dark:bg-neutral-800/30 px-5 py-4 transition-colors mt-4">
               <p className="font-mono text-center">
                 <span className="sp">
                   <button className="sparkle-button">
