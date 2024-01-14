@@ -11,10 +11,18 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 400,
-  bgcolor: 'background.paper',
   border: '2px solid #000',
-  boxShadow: 24,
+  boxShadow: 34,
   p: 4,
+};
+
+const mobileStyle = {
+  '@media (max-width: 600px)': {
+    ...style,
+    width: '90%',
+    backdropFilter: 'blur(10px)', // Ajusta el valor del blur según tus necesidades
+    backgroundColor: 'rgba(255, 255, 255, 0.8)', // Ajusta el color y la opacidad del fondo
+  },
 };
 
 export default function BasicModal() {
