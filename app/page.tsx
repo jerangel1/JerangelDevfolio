@@ -37,7 +37,7 @@ export default function Home() {
       <h1 className="z-10 text-3xl text-transparent duration-3000 bg-white bg-opacity-90 cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text">
         Jesús Rangel
       </h1>
-      <p className=" mt-5 text-4xl dark:drop-shadow-[0_0_0.9rem_#ffffff70]">
+      <p className=" text-white mt-5 text-4xl dark:drop-shadow-[0_0_1.9rem_#ffffff70] bg-opacity-70">
         Full Stack developer
       </p>
 

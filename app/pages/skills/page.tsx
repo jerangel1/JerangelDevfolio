@@ -234,7 +234,7 @@ const LogoItem: React.FC<LogoItemProps> = ({ logos, alt }) => {
 export default function Skills() {
   return (
     <DarkModeProvider>
-    <main className="dark flex min-h-screen flex-col items-center justify-between p-24 overflow-x-hidden bg-gradient-to-tl from-black via-zinc-300/20 to-black">
+    <main className="dark text-white flex min-h-screen flex-col items-center justify-between p-24 overflow-x-hidden bg-gradient-to-tl from-black via-zinc-300/20 to-black">
       {<Navigation />}
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex lg:flex-col">
         <p className="lg:hidden flex w-full justify-center border-b pb-6 pt-8  dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:p-4 ">

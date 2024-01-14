@@ -16,6 +16,7 @@ interface Tech {
 interface Project {
   id: number;
   name: string;
+  repository:string;
   imgSrc: string;
   altText: string;
   techStack: Tech[];
@@ -35,11 +36,11 @@ const projects: Project[] = [
   {
     id: 1,
     name: 'Web app for events',
+    repository: 'https://github.com/jerangel1/weddingRK',
     imgSrc: '/projects-img/BODARK.png',
     altText: 'App web photos y videos',
     techStack: [
       { imgSrc: '/html-logo.png', altText: 'HTML5 Logo' },
-      { imgSrc: '/css-logo.png', altText: 'CSS Logo' },
       { imgSrc: '/javascript-logo.png', altText: 'JavaScript Logo' },
       { imgSrc: '/firebase-logo.png', altText: 'Firebase Logo' }
     ],
@@ -48,14 +49,13 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    name: 'Dashboard with Nextjs',
+    name: 'Dashboard App',
+    repository: 'https://github.com/jerangel1',
     imgSrc: '/projects-img/dashboard-nextjs.png',
     altText: 'Dashboard app',
     techStack: [
       { imgSrc: '/typescript.png', altText: 'Typescript Logo' },
       { imgSrc: '/javascript-logo.png', altText: 'JavaScript Logo' },
-      { imgSrc: '/next.svg', altText: 'Next Logo' },
-      { imgSrc: '/postgress.png', altText: 'Postgress logo' },
       { imgSrc: '/LogoReact.png', altText: 'React logo' },
     ],
     description: `
@@ -67,6 +67,7 @@ const projects: Project[] = [
   {
     id: 3,
     name: 'Multiplayer game',
+    repository: 'https://github.com/jerangel1/Mokepon',
     imgSrc: '/projects-img/MOKEPON.png',
     altText: 'Juego Mokepon',
     techStack: [
@@ -80,16 +81,13 @@ const projects: Project[] = [
   {
     id: 4,
     name: 'Devfolio',
+    repository: 'https://github.com/jerangel1/JerangelDevfolio',
     imgSrc: '/projects-img/portfolioversion2jerangel.png',
     altText: 'Portfolio jerangel',
     techStack: [
       { imgSrc: '/typescript.png', altText: 'Typescript Logo' },
       { imgSrc: '/javascript-logo.png', altText: 'JavaScript Logo' },
-      { imgSrc: '/css-logo.png', altText: 'CSS Logo' },
-      { imgSrc: '/tailwind.png', altText: 'tailwind Logo' },
-      { imgSrc: '/uptashLogo.png', altText: 'uptash Logo' },
       { imgSrc: '/LogoReact.png', altText: 'React logo' },
-      { imgSrc: '/vercel.svg', altText: 'Vercel logo' },
     ],
     description: "The website you're looking at 🔝",
     previewLink: 'http://www.jerangeldev.com/',
@@ -100,17 +98,17 @@ const Projects: React.FC = () => {
 
   return (
     <DarkModeProvider>
-    <div className="dark flex flex-col gap-5 mt-15 overflow-x-hidden bg-gradient-to-tl from-black via-zinc-300/20 to-black">
-      <Navigation />
-      <HeaderProjects />
-      <div className="flex flex-col items-center justify-center container p-5 mx-auto px-4 sm:px-8">
-        {projects.map((project) => (
-          <ProjectItem key={project.id} project={project} />
-        ))}
-      </div>
+  <div className="dark text-white flex flex-col-4 gap-5 mt-15 overflow-x-hidden bg-gradient-to-tl from-black via-zinc-300/20 to-black">
+    <Navigation />
+    <HeaderProjects />
+    <div className="flex flex-col-4 items-center justify-center container p-5 mx-auto px-4 sm:px-8">
+      {projects.map((project) => (
+        <ProjectItem key={project.id} project={project} />
+      ))}
     </div>
-    </DarkModeProvider>
-  );
+  </div>
+</DarkModeProvider>
+);
 };
 
 export default Projects;
