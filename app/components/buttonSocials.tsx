@@ -8,6 +8,7 @@ import Link from "next/link";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Image from "next/image";
+import Particles from "./particles";
 
 const Icon: FC<PropsWithChildren> = ({ children }) => (
   <span className="material-symbols-outlined">{children}</span>
@@ -67,13 +68,13 @@ export const CustomButton = () => {
           height: "100%",
           top: 0,
           left: 0,
-          backgroundImage:
-            "linear-gradient(to top left, black, zinc-600 20%, black)",
+          backgroundColor: "#454545", // Reemplaza "tu_color_aqui" con un color específico o una variable válida
           backdropFilter: "blur(17px)",
           overflow: "hidden",
           borderRadius: 20,
         }}
       >
+        <Particles className="absolute inset-0 -z-10 " quantity={1000} />
         {/* Contenido del modal */}
         <div
           className="text-white flex flex-col place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[460px] z-[-1] "
