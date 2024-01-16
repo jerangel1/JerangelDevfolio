@@ -17,7 +17,7 @@ export default function About() {
     <>
     <DarkModeProvider>
       <Particles
-        className="absolute inset-0 -z-10 animate-fade-in"
+        className="absolute inset-0 -z-10"
         quantity={1500}
       />
    <main className="dark text-white min-h-screen flex flex-col items-center justify-center p-8 lg:p-16 overflow-x-hidden bg-gradient-to-tl from-black via-zinc-300/20 to-black">

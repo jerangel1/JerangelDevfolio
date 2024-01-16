@@ -94,7 +94,7 @@ export default function Works() {
     <DarkModeProvider>
     <div className="dark flex flex-col gap-8 mt-15 relative overflow-x-hidden p-7 bg-gradient-to-tl from-black via-zinc-300/20 to-black ">
       <Particles
-        className="absolute inset-0 -z-10 animate-fade-in"
+        className="absolute inset-0 -z-10 "
         quantity={1000}
       />
       <Navigation />
