@@ -60,7 +60,7 @@ export default function About() {
               <h2 className="text-2xl font-semibold mb-5  justify-center text-center ">Certifications</h2>
               <div className="text-3xl flex  items-center justify-center gap-8">
                 <Link
-                  href="/"
+                  href="https://www.salesforce.com/trailblazer/jrangel55"
                   className="hover:scale-125 transition-transform duration-300 transform"
                 >
                   <FaSalesforce />
