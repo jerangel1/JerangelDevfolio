@@ -1,8 +1,7 @@
 "use client";
-import Image from "next/image";
+
 import Particles from "../../components/particles";
 import Link from "next/link";
-import "tailwindcss/tailwind.css";
 import { Navigation } from "../../components/nav";
 import NavLink from "../../components/NavLink";
 import { FaSalesforce, FaFreeCodeCamp } from "react-icons/fa";

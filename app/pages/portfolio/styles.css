@@ -133,6 +133,17 @@
   border-right: 1px solid rgba(255, 255, 255, 0.126);
 }
 
+.top-section-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.top-section-image:hover {
+  opacity: 1;
+}
 
 @media (max-width: 640px) {
   .flex-col-4 {
