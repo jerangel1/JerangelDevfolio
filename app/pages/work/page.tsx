@@ -59,7 +59,7 @@ const experiences = [
   {
     id: 4,
     position: "Junior Developer",
-    date: "2023",
+    date: "Sep-Dec-2023",
     url: "https://koa.agency/",
     company: "Koa Agency",
     content:
@@ -74,16 +74,16 @@ const experiences = [
   },
   {
     id: 5,
-    position: "Full Stack Developer",
-    date: "2024",
-    url: "https://github.com/jerangel1",
-    company: "Ready for the next Project!",
-    content: "The Force is strong with this project. I can feel it. Can you? Let's join forces and create something cool... 💻🌌",
+    position: "Frontend Developer",
+    date: "Feb-2024",
+    url: "https://betsol.la/",
+    company: "Betsol.la",
+    content: "I'm deeply engaged in the development and creation of mobile and web applications, where I specialize in frontend responsibilities. My role involves meticulously crafting user interfaces and experiences that captivate and delight users. Utilizing tools like Figma and Canva, I design intuitive and visually appealing interfaces that enhance user engagement and satisfaction. Through careful attention to detail and a keen understanding of user behavior, I strive to create seamless and immersive experiences that leave a lasting impression.",
     category: {
-      tag: "Available",
+      tag: "Frontend",
     },
     link: {
-      url: "https://github.com/jerangel1",
+      url: "https://betsol.la/",
       text: "Read more",
     },
   },
@@ -92,27 +92,27 @@ const experiences = [
 export default function Works() {
   return (
     <DarkModeProvider>
-    <div className="dark flex flex-col gap-8 mt-15 relative overflow-x-hidden p-7 bg-gradient-to-tl from-black via-zinc-300/20 to-black ">
-      <Particles
-        className="absolute inset-0 -z-10 "
-        quantity={1000}
-      />
-      <Navigation />
-      <HeaderWork />
-      <div className="w-full h-px bg-zinc-800" />
-      <div className="flex flex-col items-center mt-35">
-        <div className="Timeline-Works w-full md:w-1/2 mx-auto relative">
-          {experiences.map((experience) => (
-            <div className={`flex md:ml-auto w-full`} key={experience.id}>
-              <ExperienceItem experience={experience} />
-            </div>
-          ))}
-        </div>
-        <div className="flex justify-center items-center mb-10 hover:scale-110">
-          <iframe src="https://lottie.host/embed/f9e047cf-d7a4-41d3-b2bb-c17c60251be8/k8yHVOqLaC.json"></iframe>
+      <div className="dark flex flex-col gap-8 mt-15 relative overflow-x-hidden p-7 bg-gradient-to-tl from-black via-zinc-300/20 to-black ">
+        <Particles
+          className="absolute inset-0 -z-10 "
+          quantity={1000}
+        />
+        <Navigation />
+        <HeaderWork />
+        <div className="w-full h-px bg-zinc-800" />
+        <div className="flex flex-col items-center mt-35">
+          <div className="Timeline-Works w-full md:w-1/2 mx-auto relative">
+            {experiences.map((experience) => (
+              <div className={`flex md:ml-auto w-full`} key={experience.id}>
+                <ExperienceItem experience={experience} />
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center items-center mb-10 hover:scale-110">
+            <iframe src="https://lottie.host/embed/f9e047cf-d7a4-41d3-b2bb-c17c60251be8/k8yHVOqLaC.json"></iframe>
+          </div>
         </div>
       </div>
-    </div>
     </DarkModeProvider>
   );
 }
