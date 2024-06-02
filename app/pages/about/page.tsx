@@ -77,7 +77,7 @@ export default function About() {
                   <SiPlatzi />
                 </Link>
                 <Link
-                  href="/"
+                  href="https://linkedin.com/in/jerangel1"
                   className="hover:scale-125 transition-transform duration-300 transform"
                 >
                   <SlSocialLinkedin />
