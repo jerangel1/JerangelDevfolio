@@ -46,7 +46,7 @@ Cualquier informacion [Next.js deployment documentation](https://nextjs.org/docs
 
 <h2>Demo</h2>
 
-Puedes ver una demo del sitio web aquí -> [DEMO](https://jerangel-devfolio.vercel.app/)
+Puedes ver una demo del sitio web aquí -> [DEMO](jesus-rangel.com/)
 <br><br>
 <hr>
 <footer>
