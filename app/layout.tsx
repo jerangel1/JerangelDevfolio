@@ -4,6 +4,7 @@ import "./globals.css";
 import React from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from '@vercel/analytics/react';
+import Particles from "./components/particles"; // Asegúrate de importar Particles
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +21,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`dark bg-black ${inter.className}`}>
-        {children}
+      <body className={`dark flex flex-col items-center justify-center w-screen h-screen overflow-hidden  ${inter.className}`}>
+        <Particles className="absolute inset-0 -z-10" quantity={1000} />
+        <div className="text-white z-10">
+          {children}
+        </div>
         <Analytics />
         <SpeedInsights/>
       </body>

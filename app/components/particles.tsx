@@ -93,16 +93,16 @@ export default function Particles({
 		}
 	};
 
-	const circleParams = (): Circle => {
+const circleParams = (): Circle => {
 		const x = Math.floor(Math.random() * canvasSize.current.w);
 		const y = Math.floor(Math.random() * canvasSize.current.h);
 		const translateX = 0;
 		const translateY = 0;
-		const size = Math.floor(Math.random() * 2) + 0.1;
+		const size = Math.floor(Math.random() * 3) + 0.5; // Aumentar el tamaño para simular meteoritos
 		const alpha = 0;
 		const targetAlpha = parseFloat((Math.random() * 0.6 + 0.1).toFixed(1));
-		const dx = (Math.random() - 0.5) * 0.2;
-		const dy = (Math.random() - 0.5) * 0.2;
+		const dx = (Math.random() - 0.5) * 1; // Aumentar la velocidad horizontal
+		const dy = (Math.random() - 0.5) * 1; // Aumentar la velocidad vertical
 		const magnetism = 0.1 + Math.random() * 4;
 		return {
 			x,
@@ -124,7 +124,7 @@ export default function Particles({
 			context.current.translate(translateX, translateY);
 			context.current.beginPath();
 			context.current.arc(x, y, size, 0, 2 * Math.PI);
-			context.current.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+			context.current.fillStyle = `rgba(173, 216, 230, ${alpha})`; // Cambiar a un color azulado
 			context.current.fill();
 			context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
 

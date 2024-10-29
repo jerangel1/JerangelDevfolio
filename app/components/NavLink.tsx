@@ -1,5 +1,34 @@
-// components/NavLink.tsx
 import Link from "next/link";
+import styled from "styled-components";
+
+const AnimatedRocket = styled.div`
+  &.visible {
+    animation: 4s rocketFloat linear infinite;
+  }
+
+  @keyframes rocketFloat {
+    0% { transform: translateX(0) rotate(45deg); }
+    10% { transform: translateX(-0.2em) rotate(45deg); }
+    30% { transform: translateX(0.1em) rotate(45deg); }
+    50% { transform: translateX(-0.1em) rotate(45deg); }
+    70% { transform: translateX(0.1em) rotate(45deg); }
+    80% { transform: translateX(-0.2em) rotate(45deg); }
+    90% { transform: translateX(0.1em) rotate(45deg); }
+    100% { transform: translateX(0) rotate(45deg); }
+  }
+`;
+
+const Star = styled.svg`
+  &.visible {
+    animation: 2s starTwinkle linear infinite;
+  }
+
+  @keyframes starTwinkle {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+`;
 
 interface NavLinkProps {
   href: string;
@@ -7,18 +36,55 @@ interface NavLinkProps {
   description: string;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ href, title, description }) => {
+const NavLink = ({ href, title, description }: NavLinkProps) => {
   return (
-    <Link href={href} passHref>
-      <div className="dark:green animate-fade-in group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-400 hover:dark:bg-neutral-800/30 duration-500 text-zinc-500 hover:text-zinc-300">
-        <h2 className="mb-3 text-2xl font-semibold text-center ">
-          {title}{" "}
-          <span className=" inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-            -&gt;
-          </span>
-        </h2>
-        <p className="text-center m-0 max-w-[30ch] text-sm opacity-90">{description}</p>
-      </div>
+    <Link
+      href={href}
+      className="group block p-4 rounded-lg border border-zinc-800/50 
+        hover:border-zinc-700 hover:bg-zinc-800/30 transition-all duration-300
+        bg-black/20 backdrop-blur-sm relative"
+    >
+      <h2 className="text-lg font-medium text-zinc-200 group-hover:text-white 
+        flex items-center justify-between">
+        {title}
+        <span className="flex items-center">
+          <AnimatedRocket className="group-hover:visible">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              className="h-6 w-6 fill-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              viewBox="0 0 16 16"
+            >
+              <path d="M12.17 9.53c2.307-2.592 3.278-4.684 3.641-6.218.21-.887.214-1.58.16-2.065a3.578 3.578 0 0 0-.108-.563 2.22 2.22 0 0 0-.078-.23V.453c-.073-.164-.168-.234-.352-.295a2.35 2.35 0 0 0-.16-.045 3.797 3.797 0 0 0-.57-.093c-.49-.044-1.19-.03-2.08.188-1.536.374-3.618 1.343-6.161 3.604l-2.4.238h-.006a2.552 2.552 0 0 0-1.524.734L.15 7.17a.512.512 0 0 0 .433.868l1.896-.271c.28-.04.592.013.955.132.232.076.437.16.655.248l.203.083c.196.816.66 1.58 1.275 2.195.613.614 1.376 1.08 2.191 1.277l.082.202c.089.218.173.424.249.657.118.363.172.676.132.956l-.271 1.9a.512.512 0 0 0 .867.433l2.382-2.386c.41-.41.668-.949.732-1.526l.24-2.408Zm.11-3.699c-.797.8-1.93.961-2.528.362-.598-.6-.436-1.733.361-2.532.798-.799 1.93-.96 2.528-.361.599.599.437 1.732-.36 2.531Z" />
+              <path d="M5.205 10.787a7.632 7.632 0 0 0 1.804 1.352c-1.118 1.007-4.929 2.028-5.054 1.903-.126-.127.737-4.189 1.839-5.18.346.69.837 1.35 1.411 1.925Z" />
+            </svg>
+          </AnimatedRocket>
+          
+          {/* Estrellas que aparecen con el hover */}
+          {[
+            { top: "-0.5rem", right: "0.5rem" },
+            { top: "0rem", right: "0.25rem" },
+            { top: "0.25rem", right: "0.75rem" }
+          ].map((position, index) => (
+            <Star
+              key={index}
+              xmlns="http://www.w3.org/2000/svg"
+              width="4"
+              height="4"
+              fill="#fff"
+              className="absolute w-1 h-1 opacity-0 group-hover:visible transition-opacity duration-300"
+              style={position}
+              viewBox="0 0 16 16"
+            >
+              <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+            </Star>
+          ))}
+        </span>
+      </h2>
+      <p className="mt-1 text-sm text-zinc-400 group-hover:text-zinc-300 line-clamp-2">
+        {description}
+      </p>
     </Link>
   );
 };

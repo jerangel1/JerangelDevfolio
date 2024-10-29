@@ -39,3 +39,7 @@ next-env.d.ts
 
 # Contentlayer
 .contentlayer
+
+# Añade estas líneas
+.pnpm-store/
+pnpm-lock.yaml
