@@ -7,7 +7,6 @@ import Particles from "../../components/particles";
 export default function Certifications() {
   return (
     <div className="dark flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
-      <Navigation />
       <h1 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl  p-8">
         Certifications
       </h1>

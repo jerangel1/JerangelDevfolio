@@ -49,3 +49,24 @@
   transition: all 0.3s ease; /* Puedes ajustar la duración según tus preferencias */
 }
 
+.modal-fullscreen {
+  padding: 0 !important;
+}
+
+.modal-fullscreen .modal-content {
+  min-height: 100vh;
+  border-radius: 0;
+}
+
+@keyframes nebula-pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-pulse-slow {
+  animation: nebula-pulse 4s ease-in-out infinite;
+}

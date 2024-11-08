@@ -5,8 +5,6 @@ import "slick-carousel/slick/slick-theme.css";
 import ProjectItem from "../../components/projectsComponents";
 import { Navigation } from "../../components/nav";
 import { HeaderProjects } from "../../components/HeaderProjects";
-// DarkModeContext.js
-import { DarkModeProvider } from "../../DarkModeContext";
 import CardProject from "@/app/components/CardProjects";
 
 interface Tech {
@@ -103,7 +101,7 @@ const projects: Project[] = [
 const Projects: React.FC = () => {
 
   return (
-    <DarkModeProvider>
+
   <div className="dark text-white flex flex-col-4 gap-5 mt-15 overflow-x-hidden">
     <Navigation />
     <HeaderProjects />
@@ -116,7 +114,7 @@ const Projects: React.FC = () => {
     </div>
     
   </div>
-</DarkModeProvider>
+
 );
 };
 

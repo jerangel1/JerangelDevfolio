@@ -40,9 +40,9 @@ const NavLink = ({ href, title, description }: NavLinkProps) => {
   return (
     <Link
       href={href}
-      className="group block p-4 rounded-lg border border-zinc-800/50 
+      className="group block p-4 rounded-lg 
         hover:border-zinc-700 hover:bg-zinc-800/30 transition-all duration-300
-        bg-black/20 backdrop-blur-sm relative"
+       relative"
     >
       <h2 className="text-lg font-medium text-zinc-200 group-hover:text-white 
         flex items-center justify-between">
@@ -60,26 +60,6 @@ const NavLink = ({ href, title, description }: NavLinkProps) => {
               <path d="M5.205 10.787a7.632 7.632 0 0 0 1.804 1.352c-1.118 1.007-4.929 2.028-5.054 1.903-.126-.127.737-4.189 1.839-5.18.346.69.837 1.35 1.411 1.925Z" />
             </svg>
           </AnimatedRocket>
-          
-          {/* Estrellas que aparecen con el hover */}
-          {[
-            { top: "-0.5rem", right: "0.5rem" },
-            { top: "0rem", right: "0.25rem" },
-            { top: "0.25rem", right: "0.75rem" }
-          ].map((position, index) => (
-            <Star
-              key={index}
-              xmlns="http://www.w3.org/2000/svg"
-              width="4"
-              height="4"
-              fill="#fff"
-              className="absolute w-1 h-1 opacity-0 group-hover:visible transition-opacity duration-300"
-              style={position}
-              viewBox="0 0 16 16"
-            >
-              <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-            </Star>
-          ))}
         </span>
       </h2>
       <p className="mt-1 text-sm text-zinc-400 group-hover:text-zinc-300 line-clamp-2">

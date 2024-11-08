@@ -46,6 +46,7 @@ module.exports = {
         progress: "progress 1s ease-in-out forwards",
         "pulse-green": "pulse-green 2s infinite",
         "loading-bar": "loading-bar 5s linear",
+        shine: "shine 2s linear infinite",
       },
       keyframes: {
         "fade-in": {
@@ -58,6 +59,10 @@ module.exports = {
           "100%": {
             opacity: "100%",
           },
+        },
+        shine: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' }
         },
         "fade-left": {
           "0%": {
@@ -118,6 +123,7 @@ module.exports = {
             opacity: "100%",
           },
         },
+        
       },
     },
   },
