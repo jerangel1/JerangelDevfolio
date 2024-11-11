@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { skills, Skill, orbits } from "../types/skills";
-import { useGalaxyRotation } from "@/app/hooks/usegalaxyrotation";
+import { useGalaxyRotation } from "@/app/hooks/useGalaxyRotation";
 
 type SkillsGalaxyProps = {
     onSkillHover: (skill: Skill | null) => void;
