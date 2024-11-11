@@ -16,15 +16,15 @@ export const Biography = () => (
             As a Frontend Developer, I embrace a unique philosophy:
             pursuing scalability over perfection. I believe in building
             solutions that can grow and adapt, knowing that in the vast
-            expanse of technology, there's always room for evolution
+            expanse of technology, there&apos;s always room for evolution
             and improvement.
         </p>
 
         <p className="text-lg leading-relaxed text-gray-200 
    transition-all duration-300 hover:text-white text-justify">
-            Beyond the screen, I'm a proud family man who finds joy in
-            the balance between code and life. When I'm not crafting
-            digital experiences, you'll find me contributing to open-source
+            Beyond the screen, I&apos;m a proud family man who finds joy in
+            the balance between code and life. When I&apos;m not crafting
+            digital experiences, you&apos;ll find me contributing to open-source
             projects, racing through hackathons with fellow developers,
             and currently exploring the exciting frontier of mobile development
             - because the tech universe is too vast to stay in just one dimension.

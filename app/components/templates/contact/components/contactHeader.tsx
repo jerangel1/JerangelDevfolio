@@ -10,7 +10,7 @@ export default function ContactHeader() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold 
         bg-clip-text text-transparent 
         bg-gradient-to-r from-purple-400 to-blue-400 mb-4">
-                Let's Connect
+                Let&apos;s Connect
             </h1>
             <p className="text-gray-300 text-lg">
                 Choose your preferred way to reach out or send me a direct message
