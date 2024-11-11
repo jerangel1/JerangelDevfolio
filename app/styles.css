@@ -721,3 +721,19 @@ button {
   position: relative;
   z-index: 9999;
 }
+.galaxy-container {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .galaxy-container {
+      transform: scale(0.8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .galaxy-container {
+      transform: none;
+  }
+}
