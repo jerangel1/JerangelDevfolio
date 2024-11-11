@@ -47,6 +47,7 @@ module.exports = {
         "pulse-green": "pulse-green 2s infinite",
         "loading-bar": "loading-bar 5s linear",
         shine: "shine 2s linear infinite",
+        'aurora': 'aurora 20s linear infinite',
       },
       keyframes: {
         "fade-in": {
@@ -59,6 +60,10 @@ module.exports = {
           "100%": {
             opacity: "100%",
           },
+        },
+        aurora: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
         },
         shine: {
           '0%': { transform: 'translateX(-100%)' },
